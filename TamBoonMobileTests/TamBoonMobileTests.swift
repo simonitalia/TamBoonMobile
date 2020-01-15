@@ -30,5 +30,35 @@ class TamBoonMobileTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
+    
+    func testCharityObjectDefinition() {
+        //given
+        let sut: Charity
+            //note, sut = system under test (common practice for naming objects subjected to test)
+        
+        //when
+        sut = Charity(id: 0, name: "Ban Khru Noi", logoURL: "http://rkdretailiq.com/news/img-corporate-baankrunoi.jpg")
+        
+        //then
+        XCTAssertEqual(sut.id, 0)
+        XCTAssertEqual(sut.name, "Ban Khru Noi")
+        XCTAssertEqual(sut.logoURL, "http://rkdretailiq.com/news/img-corporate-baankrunoi.jpg")
+    }
+    
+    func testDonationObjectDefinition() {
+        //given
+        let sut: Donation
+        
+        //when
+        sut = Donation(name: "John Smith", token: "tokn_test_123", amount: 1000)
+        
+        //then
+        XCTAssertEqual(sut.name, "John Smith")
+        XCTAssertEqual(sut.token, "tokn_test_123")
+        XCTAssertEqual(sut.amount, 1000)
+    }
+    
+    
+    
+    
 }

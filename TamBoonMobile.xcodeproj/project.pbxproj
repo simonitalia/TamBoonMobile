@@ -15,6 +15,11 @@
 		2A5BF27D23CE99FE00D3ED2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A5BF27B23CE99FE00D3ED2E /* LaunchScreen.storyboard */; };
 		2A5BF28823CE99FE00D3ED2E /* TamBoonMobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5BF28723CE99FE00D3ED2E /* TamBoonMobileTests.swift */; };
 		2A5BF29323CE99FF00D3ED2E /* TamBoonMobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5BF29223CE99FF00D3ED2E /* TamBoonMobileUITests.swift */; };
+		2A5BF2A123CE9A3100D3ED2E /* Charity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5BF2A023CE9A3100D3ED2E /* Charity.swift */; };
+		2A5BF2A323CE9AB000D3ED2E /* Donation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5BF2A223CE9AB000D3ED2E /* Donation.swift */; };
+		2A5BF2A523CEA5D000D3ED2E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5BF2A423CEA5D000D3ED2E /* Result.swift */; };
+		2A5BF2A823CEAC4A00D3ED2E /* CharitiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5BF2A723CEAC4A00D3ED2E /* CharitiesController.swift */; };
+		2A5BF2AA23CEAF1200D3ED2E /* APIEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5BF2A923CEAF1200D3ED2E /* APIEndPoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		2A5BF28E23CE99FF00D3ED2E /* TamBoonMobileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TamBoonMobileUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A5BF29223CE99FF00D3ED2E /* TamBoonMobileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamBoonMobileUITests.swift; sourceTree = "<group>"; };
 		2A5BF29423CE99FF00D3ED2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A5BF2A023CE9A3100D3ED2E /* Charity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charity.swift; sourceTree = "<group>"; };
+		2A5BF2A223CE9AB000D3ED2E /* Donation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Donation.swift; path = TamBoonMobile/DataModels/Donation.swift; sourceTree = SOURCE_ROOT; };
+		2A5BF2A423CEA5D000D3ED2E /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		2A5BF2A723CEAC4A00D3ED2E /* CharitiesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharitiesController.swift; sourceTree = "<group>"; };
+		2A5BF2A923CEAF1200D3ED2E /* APIEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndPoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +111,7 @@
 			children = (
 				2A5BF27023CE99F500D3ED2E /* AppDelegate.swift */,
 				2A5BF27223CE99F500D3ED2E /* SceneDelegate.swift */,
+				2A5BF2A623CEAA5E00D3ED2E /* DataModels */,
 				2A5BF27423CE99F500D3ED2E /* ViewController.swift */,
 				2A5BF27623CE99F600D3ED2E /* Main.storyboard */,
 				2A5BF27923CE99FE00D3ED2E /* Assets.xcassets */,
@@ -126,6 +137,18 @@
 				2A5BF29423CE99FF00D3ED2E /* Info.plist */,
 			);
 			path = TamBoonMobileUITests;
+			sourceTree = "<group>";
+		};
+		2A5BF2A623CEAA5E00D3ED2E /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				2A5BF2A923CEAF1200D3ED2E /* APIEndPoint.swift */,
+				2A5BF2A723CEAC4A00D3ED2E /* CharitiesController.swift */,
+				2A5BF2A023CE9A3100D3ED2E /* Charity.swift */,
+				2A5BF2A223CE9AB000D3ED2E /* Donation.swift */,
+				2A5BF2A423CEA5D000D3ED2E /* Result.swift */,
+			);
+			path = DataModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,9 +282,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A5BF2A523CEA5D000D3ED2E /* Result.swift in Sources */,
+				2A5BF2A123CE9A3100D3ED2E /* Charity.swift in Sources */,
 				2A5BF27523CE99F500D3ED2E /* ViewController.swift in Sources */,
 				2A5BF27123CE99F500D3ED2E /* AppDelegate.swift in Sources */,
+				2A5BF2A823CEAC4A00D3ED2E /* CharitiesController.swift in Sources */,
+				2A5BF2A323CE9AB000D3ED2E /* Donation.swift in Sources */,
 				2A5BF27323CE99F500D3ED2E /* SceneDelegate.swift in Sources */,
+				2A5BF2AA23CEAF1200D3ED2E /* APIEndPoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,6 +14,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    func fetchCharitiesList() {
+        let endpoint = APIEndPoint.charities.rawValue
+        CharitiesController.shared.fetchData(from: endpoint) { (fetchedCharities, error) in
+            
+            
+            
+            }
+        
+    }
 
 
 }
