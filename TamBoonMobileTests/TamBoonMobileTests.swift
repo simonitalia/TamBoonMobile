@@ -31,6 +31,7 @@ class TamBoonMobileTests: XCTestCase {
         }
     }
     
+    //MARK: Data model tests
     func testCharityObjectDefinition() {
         //given
         let sut: Charity
@@ -56,6 +57,42 @@ class TamBoonMobileTests: XCTestCase {
         XCTAssertEqual(sut.name, "John Smith")
         XCTAssertEqual(sut.token, "tokn_test_123")
         XCTAssertEqual(sut.amount, 1000)
+    }
+    
+    //MARK: CharitiesTableViewController tests
+    func testCharitiesTableViewExists() {
+        //given
+        let sut = CharitiesTableViewController()
+        
+        //when
+        sut.loadViewIfNeeded()
+        
+        //then
+        XCTAssertNotNil(sut.tableView)
+    }
+    
+    func testCharitiesTableViewHasCorrectRowCount() {
+        //given
+        let sut = CharitiesTableViewController()
+        
+        //when
+        sut.loadViewIfNeeded()
+        
+        //then
+        let rowCount = sut.tableView(sut.tableView, numberOfRowsInSection: 0)
+        XCTAssertEqual(rowCount, CharitiesController.shared.charities.count)
+    }
+    
+    func testCharitiesTableViewControllerHasLargeTitles() {
+        //given
+        let sut = CharitiesTableViewController()
+        _ = UINavigationController(rootViewController: sut)
+        
+        //when
+        sut.loadViewIfNeeded()
+        
+        //then
+        XCTAssertTrue(sut.navigationController?.navigationBar.prefersLargeTitles ?? true)
     }
     
     

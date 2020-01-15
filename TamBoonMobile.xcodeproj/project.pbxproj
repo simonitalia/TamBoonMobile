@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2A5BF27123CE99F500D3ED2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5BF27023CE99F500D3ED2E /* AppDelegate.swift */; };
 		2A5BF27323CE99F500D3ED2E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5BF27223CE99F500D3ED2E /* SceneDelegate.swift */; };
-		2A5BF27523CE99F500D3ED2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5BF27423CE99F500D3ED2E /* ViewController.swift */; };
 		2A5BF27823CE99F600D3ED2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A5BF27623CE99F600D3ED2E /* Main.storyboard */; };
 		2A5BF27A23CE99FE00D3ED2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A5BF27923CE99FE00D3ED2E /* Assets.xcassets */; };
 		2A5BF27D23CE99FE00D3ED2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A5BF27B23CE99FE00D3ED2E /* LaunchScreen.storyboard */; };
@@ -20,6 +19,7 @@
 		2A5BF2A523CEA5D000D3ED2E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5BF2A423CEA5D000D3ED2E /* Result.swift */; };
 		2A5BF2A823CEAC4A00D3ED2E /* CharitiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5BF2A723CEAC4A00D3ED2E /* CharitiesController.swift */; };
 		2A5BF2AA23CEAF1200D3ED2E /* APIEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5BF2A923CEAF1200D3ED2E /* APIEndPoint.swift */; };
+		2A5BF2AC23CF1AEF00D3ED2E /* CharitiesTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5BF2AB23CF1AEF00D3ED2E /* CharitiesTableTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +43,6 @@
 		2A5BF26D23CE99F500D3ED2E /* TamBoonMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TamBoonMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A5BF27023CE99F500D3ED2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A5BF27223CE99F500D3ED2E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2A5BF27423CE99F500D3ED2E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2A5BF27723CE99F600D3ED2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2A5BF27923CE99FE00D3ED2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A5BF27C23CE99FE00D3ED2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,6 +58,7 @@
 		2A5BF2A423CEA5D000D3ED2E /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		2A5BF2A723CEAC4A00D3ED2E /* CharitiesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharitiesController.swift; sourceTree = "<group>"; };
 		2A5BF2A923CEAF1200D3ED2E /* APIEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndPoint.swift; sourceTree = "<group>"; };
+		2A5BF2AB23CF1AEF00D3ED2E /* CharitiesTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharitiesTableTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +112,7 @@
 				2A5BF27023CE99F500D3ED2E /* AppDelegate.swift */,
 				2A5BF27223CE99F500D3ED2E /* SceneDelegate.swift */,
 				2A5BF2A623CEAA5E00D3ED2E /* DataModels */,
-				2A5BF27423CE99F500D3ED2E /* ViewController.swift */,
+				2A5BF2AB23CF1AEF00D3ED2E /* CharitiesTableTableViewController.swift */,
 				2A5BF27623CE99F600D3ED2E /* Main.storyboard */,
 				2A5BF27923CE99FE00D3ED2E /* Assets.xcassets */,
 				2A5BF27B23CE99FE00D3ED2E /* LaunchScreen.storyboard */,
@@ -284,7 +284,7 @@
 			files = (
 				2A5BF2A523CEA5D000D3ED2E /* Result.swift in Sources */,
 				2A5BF2A123CE9A3100D3ED2E /* Charity.swift in Sources */,
-				2A5BF27523CE99F500D3ED2E /* ViewController.swift in Sources */,
+				2A5BF2AC23CF1AEF00D3ED2E /* CharitiesTableTableViewController.swift in Sources */,
 				2A5BF27123CE99F500D3ED2E /* AppDelegate.swift in Sources */,
 				2A5BF2A823CEAC4A00D3ED2E /* CharitiesController.swift in Sources */,
 				2A5BF2A323CE9AB000D3ED2E /* Donation.swift in Sources */,

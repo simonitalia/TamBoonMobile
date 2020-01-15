@@ -11,10 +11,11 @@ import Foundation
 //this object deals with fetching data from server api endpoints
 public struct CharitiesController {
     static var shared = CharitiesController()
-    static var charities = [CharityList]()
+        //static global varibale accessible anywhere within app
+    var charities = [CharityList]()
     let baseURL = URL(string: "https://virtserver.swaggerhub.com/chakritw/tamboon-api/1.0.0/")
     
-    //call to api server endpoint to fetch requested data
+    //call to api server endpoint to fetch requested datat. Data type set to Any so function is generic
     func fetchData(from endpoint: String, completion: @escaping ([Any]?, Error?) -> Void) {
         guard let url = baseURL?.appendingPathComponent(endpoint) else {return}
         
