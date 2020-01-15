@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2A5BF27123CE99F500D3ED2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5BF27023CE99F500D3ED2E /* AppDelegate.swift */; };
+		2A5BF27323CE99F500D3ED2E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5BF27223CE99F500D3ED2E /* SceneDelegate.swift */; };
+		2A5BF27523CE99F500D3ED2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5BF27423CE99F500D3ED2E /* ViewController.swift */; };
+		2A5BF27823CE99F600D3ED2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A5BF27623CE99F600D3ED2E /* Main.storyboard */; };
+		2A5BF27A23CE99FE00D3ED2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A5BF27923CE99FE00D3ED2E /* Assets.xcassets */; };
+		2A5BF27D23CE99FE00D3ED2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A5BF27B23CE99FE00D3ED2E /* LaunchScreen.storyboard */; };
+		2A5BF28823CE99FE00D3ED2E /* TamBoonMobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5BF28723CE99FE00D3ED2E /* TamBoonMobileTests.swift */; };
+		2A5BF29323CE99FF00D3ED2E /* TamBoonMobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5BF29223CE99FF00D3ED2E /* TamBoonMobileUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2A5BF28423CE99FE00D3ED2E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A5BF26523CE99F500D3ED2E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A5BF26C23CE99F500D3ED2E;
+			remoteInfo = TamBoonMobile;
+		};
+		2A5BF28F23CE99FF00D3ED2E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A5BF26523CE99F500D3ED2E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A5BF26C23CE99F500D3ED2E;
+			remoteInfo = TamBoonMobile;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2A5BF26D23CE99F500D3ED2E /* TamBoonMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TamBoonMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A5BF27023CE99F500D3ED2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2A5BF27223CE99F500D3ED2E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		2A5BF27423CE99F500D3ED2E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2A5BF27723CE99F600D3ED2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2A5BF27923CE99FE00D3ED2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2A5BF27C23CE99FE00D3ED2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2A5BF27E23CE99FE00D3ED2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A5BF28323CE99FE00D3ED2E /* TamBoonMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TamBoonMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A5BF28723CE99FE00D3ED2E /* TamBoonMobileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamBoonMobileTests.swift; sourceTree = "<group>"; };
+		2A5BF28923CE99FE00D3ED2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A5BF28E23CE99FF00D3ED2E /* TamBoonMobileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TamBoonMobileUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A5BF29223CE99FF00D3ED2E /* TamBoonMobileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamBoonMobileUITests.swift; sourceTree = "<group>"; };
+		2A5BF29423CE99FF00D3ED2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2A5BF26A23CE99F500D3ED2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A5BF28023CE99FE00D3ED2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A5BF28B23CE99FF00D3ED2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A5BF26423CE99F500D3ED2E = {
+			isa = PBXGroup;
+			children = (
+				2A5BF26F23CE99F500D3ED2E /* TamBoonMobile */,
+				2A5BF28623CE99FE00D3ED2E /* TamBoonMobileTests */,
+				2A5BF29123CE99FF00D3ED2E /* TamBoonMobileUITests */,
+				2A5BF26E23CE99F500D3ED2E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2A5BF26E23CE99F500D3ED2E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A5BF26D23CE99F500D3ED2E /* TamBoonMobile.app */,
+				2A5BF28323CE99FE00D3ED2E /* TamBoonMobileTests.xctest */,
+				2A5BF28E23CE99FF00D3ED2E /* TamBoonMobileUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2A5BF26F23CE99F500D3ED2E /* TamBoonMobile */ = {
+			isa = PBXGroup;
+			children = (
+				2A5BF27023CE99F500D3ED2E /* AppDelegate.swift */,
+				2A5BF27223CE99F500D3ED2E /* SceneDelegate.swift */,
+				2A5BF27423CE99F500D3ED2E /* ViewController.swift */,
+				2A5BF27623CE99F600D3ED2E /* Main.storyboard */,
+				2A5BF27923CE99FE00D3ED2E /* Assets.xcassets */,
+				2A5BF27B23CE99FE00D3ED2E /* LaunchScreen.storyboard */,
+				2A5BF27E23CE99FE00D3ED2E /* Info.plist */,
+			);
+			path = TamBoonMobile;
+			sourceTree = "<group>";
+		};
+		2A5BF28623CE99FE00D3ED2E /* TamBoonMobileTests */ = {
+			isa = PBXGroup;
+			children = (
+				2A5BF28723CE99FE00D3ED2E /* TamBoonMobileTests.swift */,
+				2A5BF28923CE99FE00D3ED2E /* Info.plist */,
+			);
+			path = TamBoonMobileTests;
+			sourceTree = "<group>";
+		};
+		2A5BF29123CE99FF00D3ED2E /* TamBoonMobileUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2A5BF29223CE99FF00D3ED2E /* TamBoonMobileUITests.swift */,
+				2A5BF29423CE99FF00D3ED2E /* Info.plist */,
+			);
+			path = TamBoonMobileUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2A5BF26C23CE99F500D3ED2E /* TamBoonMobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A5BF29723CE99FF00D3ED2E /* Build configuration list for PBXNativeTarget "TamBoonMobile" */;
+			buildPhases = (
+				2A5BF26923CE99F500D3ED2E /* Sources */,
+				2A5BF26A23CE99F500D3ED2E /* Frameworks */,
+				2A5BF26B23CE99F500D3ED2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TamBoonMobile;
+			productName = TamBoonMobile;
+			productReference = 2A5BF26D23CE99F500D3ED2E /* TamBoonMobile.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2A5BF28223CE99FE00D3ED2E /* TamBoonMobileTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A5BF29A23CE99FF00D3ED2E /* Build configuration list for PBXNativeTarget "TamBoonMobileTests" */;
+			buildPhases = (
+				2A5BF27F23CE99FE00D3ED2E /* Sources */,
+				2A5BF28023CE99FE00D3ED2E /* Frameworks */,
+				2A5BF28123CE99FE00D3ED2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A5BF28523CE99FE00D3ED2E /* PBXTargetDependency */,
+			);
+			name = TamBoonMobileTests;
+			productName = TamBoonMobileTests;
+			productReference = 2A5BF28323CE99FE00D3ED2E /* TamBoonMobileTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2A5BF28D23CE99FF00D3ED2E /* TamBoonMobileUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A5BF29D23CE99FF00D3ED2E /* Build configuration list for PBXNativeTarget "TamBoonMobileUITests" */;
+			buildPhases = (
+				2A5BF28A23CE99FF00D3ED2E /* Sources */,
+				2A5BF28B23CE99FF00D3ED2E /* Frameworks */,
+				2A5BF28C23CE99FF00D3ED2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A5BF29023CE99FF00D3ED2E /* PBXTargetDependency */,
+			);
+			name = TamBoonMobileUITests;
+			productName = TamBoonMobileUITests;
+			productReference = 2A5BF28E23CE99FF00D3ED2E /* TamBoonMobileUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A5BF26523CE99F500D3ED2E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "SDI Group Inc.";
+				TargetAttributes = {
+					2A5BF26C23CE99F500D3ED2E = {
+						CreatedOnToolsVersion = 11.3;
+					};
+					2A5BF28223CE99FE00D3ED2E = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = 2A5BF26C23CE99F500D3ED2E;
+					};
+					2A5BF28D23CE99FF00D3ED2E = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = 2A5BF26C23CE99F500D3ED2E;
+					};
+				};
+			};
+			buildConfigurationList = 2A5BF26823CE99F500D3ED2E /* Build configuration list for PBXProject "TamBoonMobile" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2A5BF26423CE99F500D3ED2E;
+			productRefGroup = 2A5BF26E23CE99F500D3ED2E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2A5BF26C23CE99F500D3ED2E /* TamBoonMobile */,
+				2A5BF28223CE99FE00D3ED2E /* TamBoonMobileTests */,
+				2A5BF28D23CE99FF00D3ED2E /* TamBoonMobileUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2A5BF26B23CE99F500D3ED2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A5BF27D23CE99FE00D3ED2E /* LaunchScreen.storyboard in Resources */,
+				2A5BF27A23CE99FE00D3ED2E /* Assets.xcassets in Resources */,
+				2A5BF27823CE99F600D3ED2E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A5BF28123CE99FE00D3ED2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A5BF28C23CE99FF00D3ED2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2A5BF26923CE99F500D3ED2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A5BF27523CE99F500D3ED2E /* ViewController.swift in Sources */,
+				2A5BF27123CE99F500D3ED2E /* AppDelegate.swift in Sources */,
+				2A5BF27323CE99F500D3ED2E /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A5BF27F23CE99FE00D3ED2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A5BF28823CE99FE00D3ED2E /* TamBoonMobileTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A5BF28A23CE99FF00D3ED2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A5BF29323CE99FF00D3ED2E /* TamBoonMobileUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2A5BF28523CE99FE00D3ED2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A5BF26C23CE99F500D3ED2E /* TamBoonMobile */;
+			targetProxy = 2A5BF28423CE99FE00D3ED2E /* PBXContainerItemProxy */;
+		};
+		2A5BF29023CE99FF00D3ED2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A5BF26C23CE99F500D3ED2E /* TamBoonMobile */;
+			targetProxy = 2A5BF28F23CE99FF00D3ED2E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2A5BF27623CE99F600D3ED2E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A5BF27723CE99F600D3ED2E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2A5BF27B23CE99FE00D3ED2E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A5BF27C23CE99FE00D3ED2E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2A5BF29523CE99FF00D3ED2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2A5BF29623CE99FF00D3ED2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2A5BF29823CE99FF00D3ED2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4879TTCN72;
+				INFOPLIST_FILE = TamBoonMobile/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.magicaltomato.TamBoonMobile;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2A5BF29923CE99FF00D3ED2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4879TTCN72;
+				INFOPLIST_FILE = TamBoonMobile/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.magicaltomato.TamBoonMobile;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2A5BF29B23CE99FF00D3ED2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4879TTCN72;
+				INFOPLIST_FILE = TamBoonMobileTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.magicaltomato.TamBoonMobileTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TamBoonMobile.app/TamBoonMobile";
+			};
+			name = Debug;
+		};
+		2A5BF29C23CE99FF00D3ED2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4879TTCN72;
+				INFOPLIST_FILE = TamBoonMobileTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.magicaltomato.TamBoonMobileTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TamBoonMobile.app/TamBoonMobile";
+			};
+			name = Release;
+		};
+		2A5BF29E23CE99FF00D3ED2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4879TTCN72;
+				INFOPLIST_FILE = TamBoonMobileUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.magicaltomato.TamBoonMobileUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TamBoonMobile;
+			};
+			name = Debug;
+		};
+		2A5BF29F23CE99FF00D3ED2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4879TTCN72;
+				INFOPLIST_FILE = TamBoonMobileUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.magicaltomato.TamBoonMobileUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TamBoonMobile;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2A5BF26823CE99F500D3ED2E /* Build configuration list for PBXProject "TamBoonMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A5BF29523CE99FF00D3ED2E /* Debug */,
+				2A5BF29623CE99FF00D3ED2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A5BF29723CE99FF00D3ED2E /* Build configuration list for PBXNativeTarget "TamBoonMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A5BF29823CE99FF00D3ED2E /* Debug */,
+				2A5BF29923CE99FF00D3ED2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A5BF29A23CE99FF00D3ED2E /* Build configuration list for PBXNativeTarget "TamBoonMobileTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A5BF29B23CE99FF00D3ED2E /* Debug */,
+				2A5BF29C23CE99FF00D3ED2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A5BF29D23CE99FF00D3ED2E /* Build configuration list for PBXNativeTarget "TamBoonMobileUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A5BF29E23CE99FF00D3ED2E /* Debug */,
+				2A5BF29F23CE99FF00D3ED2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2A5BF26523CE99F500D3ED2E /* Project object */;
+}
