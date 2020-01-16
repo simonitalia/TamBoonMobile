@@ -19,11 +19,6 @@ class TamBoonMobileTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
@@ -59,6 +54,17 @@ class TamBoonMobileTests: XCTestCase {
         XCTAssertEqual(sut.amount, 1000)
     }
     
+    func testRemoteAPIServerBaseURLIsCorrect() {
+        //given
+        let sut = CharitiesController()
+        
+        //when
+        let urlToTest = URL(string:"https://virtserver.swaggerhub.com/chakritw/tamboon-api/1.0.0/")
+        
+        //then
+        XCTAssertEqual(sut.baseURL, urlToTest)
+    }
+    
     //MARK: CharitiesTableViewController tests
     func testCharitiesTableViewExists() {
         //given
@@ -80,7 +86,7 @@ class TamBoonMobileTests: XCTestCase {
         
         //then
         let rowCount = sut.tableView(sut.tableView, numberOfRowsInSection: 0)
-        XCTAssertEqual(rowCount, CharitiesController.shared.charities.count)
+        XCTAssertEqual(rowCount, sut.charities.count)
     }
     
     func testCharitiesTableViewControllerHasLargeTitles() {
@@ -95,7 +101,15 @@ class TamBoonMobileTests: XCTestCase {
         XCTAssertTrue(sut.navigationController?.navigationBar.prefersLargeTitles ?? true)
     }
     
-    
-    
+    func testCharitiesViewControllerHasCorrectTitle() {
+        //given
+        let sut = CharitiesTableViewController()
+        
+        //when
+        sut.loadViewIfNeeded()
+        
+        //then
+        XCTAssertEqual(sut.title, "Select Charity")
+    }
     
 }

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dfc-Cc-ibQ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Charities Table View Controller-->
+        <!--Select Charity-->
         <scene sceneID="lYV-fy-NKn">
             <objects>
                 <tableViewController id="tlF-vI-EAm" customClass="CharitiesTableViewController" customModule="TamBoonMobile" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,11 +16,56 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CharityCell" id="6Ys-Hr-h0W">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="61"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6Ys-Hr-h0W" id="tvG-dS-eqb">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="61"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9OS-X1-crG">
+                                            <rect key="frame" x="5" y="5" width="404" height="51"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="globe" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="KWa-Js-8OZ">
+                                                    <rect key="frame" x="0.0" y="1" width="44" height="42.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="MYz-ms-AmV"/>
+                                                        <constraint firstAttribute="width" constant="44" id="V1e-w6-Qez"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXC-ya-4iN">
+                                                    <rect key="frame" x="49" y="0.0" width="250" height="51"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Donate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuK-yF-fib">
+                                                    <rect key="frame" x="304" y="0.0" width="100" height="51"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="JIX-MP-tEo"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="NuK-yF-fib" firstAttribute="leading" secondItem="tXC-ya-4iN" secondAttribute="trailing" constant="5" id="9BT-m7-blq"/>
+                                                <constraint firstAttribute="bottom" secondItem="NuK-yF-fib" secondAttribute="bottom" id="DsO-tb-yed"/>
+                                                <constraint firstItem="tXC-ya-4iN" firstAttribute="leading" secondItem="KWa-Js-8OZ" secondAttribute="trailing" constant="5" id="V1V-IV-PjE"/>
+                                                <constraint firstItem="tXC-ya-4iN" firstAttribute="top" secondItem="9OS-X1-crG" secondAttribute="top" id="cAY-LU-2Wu"/>
+                                                <constraint firstAttribute="trailing" secondItem="NuK-yF-fib" secondAttribute="trailing" id="f6E-YD-Bpg"/>
+                                                <constraint firstItem="NuK-yF-fib" firstAttribute="top" secondItem="9OS-X1-crG" secondAttribute="top" id="nf0-dt-Q4q"/>
+                                                <constraint firstAttribute="bottom" secondItem="tXC-ya-4iN" secondAttribute="bottom" id="ouf-aF-CBT"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="9OS-X1-crG" secondAttribute="trailing" constant="5" id="gMe-wd-qGB"/>
+                                        <constraint firstItem="9OS-X1-crG" firstAttribute="top" secondItem="tvG-dS-eqb" secondAttribute="top" constant="5" id="gim-vK-Vxk"/>
+                                        <constraint firstItem="9OS-X1-crG" firstAttribute="leading" secondItem="tvG-dS-eqb" secondAttribute="leading" constant="5" id="uYx-dS-kv8"/>
+                                        <constraint firstAttribute="bottom" secondItem="9OS-X1-crG" secondAttribute="bottom" constant="5" id="ueM-sc-qoz"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -29,11 +74,11 @@
                             <outlet property="delegate" destination="tlF-vI-EAm" id="M9e-jn-Rm2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="lJs-dL-ATr"/>
+                    <navigationItem key="navigationItem" title="Select Charity" largeTitleDisplayMode="always" id="lJs-dL-ATr"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sb8-en-4hB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="499" y="23"/>
+            <point key="canvasLocation" x="498.55072463768118" y="22.767857142857142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FCs-47-vYc">
@@ -54,4 +99,7 @@
             <point key="canvasLocation" x="-226.08695652173915" y="23.4375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="globe" catalog="system" width="64" height="60"/>
+    </resources>
 </document>

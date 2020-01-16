@@ -9,29 +9,34 @@
 import UIKit
 
 class CharitiesTableViewController: UITableViewController {
+    
+    //property to store list of charities, once data fetched from remote server
+    var charities = [Charity]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //trigger fetch of charities data fron remote api server
-        fetchCharitiesList()
+        //trigger fetch of charities data fron remote api server on background thread
+        performSelector(inBackground: #selector(fireFetchCharitiesList), with: nil)
+        title = "Select Charity"
         navigationController?.navigationBar.prefersLargeTitles = true
-
     }
     
     //MARK: Custom methods
     func updateUI() {
-        
-        
+        //update UI on main thread so app doesn't crash
+        DispatchQueue.main.async { [unowned self] in
+            self.tableView.reloadData()
+        }
     }
     
-    func fetchCharitiesList() {
-        let endpoint = APIEndPoint.charities.rawValue
-        CharitiesController.shared.fetchData(from: endpoint) { (result, error) in
-            if let charities = result {
-                CharitiesController.shared.charities = charities as! [CharityList] //force downcast to correct type
-//                self.updateUI(with: charities)
-                print("Fetched Charities List: \(CharitiesController.shared.charities)")
+    @objc func fireFetchCharitiesList() {
+        let endpoint = APIEndpoint.charities.rawValue
+        CharitiesController.shared.fetchCharitiesList(from: endpoint) { [unowned self] (data, error) in
+            if let data = data {
+                self.charities = data
+                self.updateUI() //refresh tableView with fetched data
+                print("TableVC successfully received Charities data: \(String(describing: self.charities))")
                 
             } else {
                 if let error = error {
@@ -42,24 +47,32 @@ class CharitiesTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
+            //only 1 section in this app
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return charities.count
     }
 
     //MARK: - Table view delegate methods
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        guard charities.count != 0 else { fatalError("Charity Cell cannot be created") }
+        
+        //reference charity object for row
+        let charity = charities[indexPath.row]
+        
+        //configure cell with data from charity object
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CharityCell", for: indexPath)
+        cell.textLabel?.text = charity.name
+        
+        //set cell imageView with charity logo
+        let urlString = charity.logoURL
+        let logo = CharitiesController.shared.fetchCharityLogo(from: urlString)
+        cell.imageView?.image = logo
+        
+        
         return cell
     }
     

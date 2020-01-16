@@ -21,7 +21,7 @@ class Charity: Codable {
         case logoURL = "logo_url"
     }
     
-    //object  initializer
+    //oinitializer
     init(id: Int, name: String, logoURL: String) {
         self.id = id
         self.name = name
@@ -32,4 +32,16 @@ class Charity: Codable {
 struct CharityList: Codable {
     let total: Int
     let charities: [Charity]
+    
+    enum CodingKeys: String, CodingKey {
+        case total
+        case charities = "data"
+    }
+    
+    //initializer
+    init(total: Int, charities: [Charity]) {
+        self.total = total
+        self.charities = charities
+    }
+    
 }
