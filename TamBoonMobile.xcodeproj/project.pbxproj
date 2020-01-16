@@ -21,6 +21,7 @@
 		2A5BF2AA23CEAF1200D3ED2E /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5BF2A923CEAF1200D3ED2E /* APIEndpoint.swift */; };
 		2A5BF2AC23CF1AEF00D3ED2E /* CharitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5BF2AB23CF1AEF00D3ED2E /* CharitiesTableViewController.swift */; };
 		2A9B0C6D23D03042006C9703 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9B0C6C23D03042006C9703 /* String+Extension.swift */; };
+		2A9B0C7223D06CA4006C9703 /* CharityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9B0C7123D06CA4006C9703 /* CharityDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		2A5BF2A923CEAF1200D3ED2E /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 		2A5BF2AB23CF1AEF00D3ED2E /* CharitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharitiesTableViewController.swift; sourceTree = "<group>"; };
 		2A9B0C6C23D03042006C9703 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		2A9B0C7123D06CA4006C9703 /* CharityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				2A9B0C6E23D0305A006C9703 /* Helpers+Extensions */,
 				2A5BF2A623CEAA5E00D3ED2E /* DataModels */,
 				2A5BF2AB23CF1AEF00D3ED2E /* CharitiesTableViewController.swift */,
+				2A9B0C7123D06CA4006C9703 /* CharityDetailViewController.swift */,
 				2A5BF27623CE99F600D3ED2E /* Main.storyboard */,
 				2A5BF27923CE99FE00D3ED2E /* Assets.xcassets */,
 				2A5BF27B23CE99FE00D3ED2E /* LaunchScreen.storyboard */,
@@ -299,6 +302,7 @@
 				2A5BF2AC23CF1AEF00D3ED2E /* CharitiesTableViewController.swift in Sources */,
 				2A5BF27123CE99F500D3ED2E /* AppDelegate.swift in Sources */,
 				2A5BF2A823CEAC4A00D3ED2E /* CharitiesController.swift in Sources */,
+				2A9B0C7223D06CA4006C9703 /* CharityDetailViewController.swift in Sources */,
 				2A5BF2A323CE9AB000D3ED2E /* Donation.swift in Sources */,
 				2A5BF27323CE99F500D3ED2E /* SceneDelegate.swift in Sources */,
 				2A5BF2AA23CEAF1200D3ED2E /* APIEndpoint.swift in Sources */,

@@ -101,7 +101,7 @@ class TamBoonMobileTests: XCTestCase {
         XCTAssertTrue(sut.navigationController?.navigationBar.prefersLargeTitles ?? true)
     }
     
-    func testCharitiesViewControllerHasCorrectTitle() {
+    func testCharitiesViewControllerHasInitialCorrectTitle() {
         //given
         let sut = CharitiesTableViewController()
         
@@ -109,7 +109,8 @@ class TamBoonMobileTests: XCTestCase {
         sut.loadViewIfNeeded()
         
         //then
-        XCTAssertEqual(sut.title, "Select Charity")
+        XCTAssertEqual(sut.title, "Loading...")
     }
+    
     
 }
