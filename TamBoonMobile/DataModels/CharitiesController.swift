@@ -43,7 +43,7 @@ public struct CharitiesController {
         task.resume()
     }
     
-    func fetchCharityLogo(from urlString: String) -> UIImage? {
+    func fetchCharityLogoImage(from urlString: String) -> UIImage? {
         var image = UIImage()
         
         //force https

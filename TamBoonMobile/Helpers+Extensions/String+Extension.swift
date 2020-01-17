@@ -8,8 +8,9 @@
 
 import Foundation
 
-//convert insecure http url string to secure https url string
 extension String {
+    
+    //convert insecure http url string to secure https url string
     func secureURL() -> URL {
         var components = URLComponents(string: self)
         components?.scheme = "https"

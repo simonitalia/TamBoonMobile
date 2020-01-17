@@ -14,3 +14,7 @@ struct Donation: Codable {
     let token: String
     let amount: Int
 }
+
+struct Donations {
+    let amounts: [Int] = [5_000, 10_000, 20_000, 50_000, 100_000, 1000_0000_000]
+}

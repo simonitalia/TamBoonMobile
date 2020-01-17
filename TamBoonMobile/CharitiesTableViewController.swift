@@ -77,16 +77,23 @@ class CharitiesTableViewController: UITableViewController {
     }
     
 
-    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    //setup segue to destination vc
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        // get destinaton view controller
+        if segue.identifier == "CharitiesTableVCToCharityDetailVC" {
+            let vc = segue.destination as! CharityDetailViewController
+            let rowTapped = tableView.indexPathForSelectedRow!.row
+            
+            //pass tapped charity object to destinaiton vc
+            vc.charity = charities[rowTapped]
+        
+        } else {
+            print("Failed to push to CharityDetailVC")
+        }
     }
-
-
 }
 
 

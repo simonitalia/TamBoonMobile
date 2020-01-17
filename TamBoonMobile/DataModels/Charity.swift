@@ -10,9 +10,9 @@ import Foundation
 
 //define charity object
 class Charity: Codable {
-    let id: Int
-    let name: String
-    let logoURL: String
+    var id: Int
+    var name: String
+    var logoURL: String
     
     //map object properties to json api parameter names
     enum CodingKeys: String, CodingKey {
@@ -21,7 +21,7 @@ class Charity: Codable {
         case logoURL = "logo_url"
     }
     
-    //oinitializer
+    //initializer
     init(id: Int, name: String, logoURL: String) {
         self.id = id
         self.name = name

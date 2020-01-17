@@ -11,12 +11,12 @@
         <scene sceneID="lYV-fy-NKn">
             <objects>
                 <tableViewController id="tlF-vI-EAm" customClass="CharitiesTableViewController" customModule="TamBoonMobile" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wio-AH-yWU">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wio-AH-yWU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CharityCell" id="wyY-7s-T68">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CharityCell" id="wyY-7s-T68">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wyY-7s-T68" id="7yg-9S-CFq">
@@ -24,9 +24,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="V76-FO-ezK" kind="popoverPresentation" identifier="TableVCToDetailVC" popoverAnchorView="wyY-7s-T68" id="nb0-mg-kP6">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
+                                    <segue destination="V76-FO-ezK" kind="show" identifier="CharitiesTableVCToCharityDetailVC" id="Icw-Jy-7fn"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -43,30 +41,90 @@
             </objects>
             <point key="canvasLocation" x="498.55072463768118" y="22.767857142857142"/>
         </scene>
-        <!--Charity Detail View Controller-->
+        <!--Donate-->
         <scene sceneID="ZuS-Zo-54e">
             <objects>
                 <viewController id="V76-FO-ezK" customClass="CharityDetailViewController" customModule="TamBoonMobile" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XGq-ff-ooA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y78-QZ-fJh">
-                                <rect key="frame" x="87" y="105" width="240" height="145"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y78-QZ-fJh">
+                                <rect key="frame" x="107" y="117" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="bcv-iI-elY"/>
+                                    <constraint firstAttribute="height" constant="200" id="nCu-rs-CwS"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7MG-xa-EiB">
-                                <rect key="frame" x="87" y="287" width="240" height="21"/>
+                            <activityIndicatorView opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="JtG-40-8fN">
+                                <rect key="frame" x="107" y="117" width="200" height="200"/>
+                                <color key="color" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7MG-xa-EiB">
+                                <rect key="frame" x="107" y="336" width="200" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n4g-c0-vIH">
+                                <rect key="frame" x="0.0" y="487" width="414" height="216"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Donation Amount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lEX-XV-UCj">
+                                <rect key="frame" x="0.0" y="417" width="414" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="ROm-O3-ae4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Dz-eE-LpC">
+                                <rect key="frame" x="132" y="713" width="150" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="KYc-bn-P1i"/>
+                                    <constraint firstAttribute="height" constant="50" id="QRU-7a-bHF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <state key="normal" title="DONATE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="charityDonateButtonTapped:" destination="V76-FO-ezK" eventType="touchUpInside" id="f5t-AF-Sdp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="7MG-xa-EiB" firstAttribute="width" secondItem="Y78-QZ-fJh" secondAttribute="width" multiplier="0.175" id="BDG-xz-sJ4"/>
+                            <constraint firstItem="8Dz-eE-LpC" firstAttribute="centerX" secondItem="6B0-s7-eIU" secondAttribute="centerX" id="5CY-le-EbE"/>
+                            <constraint firstItem="7MG-xa-EiB" firstAttribute="width" secondItem="Y78-QZ-fJh" secondAttribute="width" multiplier="0.275" constant="145" id="6gB-94-ObU"/>
+                            <constraint firstItem="JtG-40-8fN" firstAttribute="trailing" secondItem="Y78-QZ-fJh" secondAttribute="trailing" id="6zN-bU-8AA"/>
+                            <constraint firstItem="JtG-40-8fN" firstAttribute="top" secondItem="Y78-QZ-fJh" secondAttribute="top" id="GbG-2j-UeG"/>
+                            <constraint firstItem="n4g-c0-vIH" firstAttribute="top" secondItem="lEX-XV-UCj" secondAttribute="bottom" constant="10" id="LDd-Na-5ti"/>
+                            <constraint firstItem="6B0-s7-eIU" firstAttribute="trailing" secondItem="lEX-XV-UCj" secondAttribute="trailing" id="M2T-aw-mPB"/>
+                            <constraint firstItem="7MG-xa-EiB" firstAttribute="firstBaseline" secondItem="Y78-QZ-fJh" secondAttribute="baseline" constant="35" id="O24-n4-LDc"/>
+                            <constraint firstItem="n4g-c0-vIH" firstAttribute="leading" secondItem="6B0-s7-eIU" secondAttribute="leading" id="UjP-AH-0l7"/>
+                            <constraint firstItem="lEX-XV-UCj" firstAttribute="top" secondItem="7MG-xa-EiB" secondAttribute="bottom" constant="60" id="fyi-Y1-1bO"/>
+                            <constraint firstItem="n4g-c0-vIH" firstAttribute="trailing" secondItem="6B0-s7-eIU" secondAttribute="trailing" id="gpu-ir-pmc"/>
+                            <constraint firstItem="6B0-s7-eIU" firstAttribute="bottom" secondItem="8Dz-eE-LpC" secondAttribute="bottom" constant="50" id="hSc-DP-PbO"/>
+                            <constraint firstItem="lEX-XV-UCj" firstAttribute="leading" secondItem="6B0-s7-eIU" secondAttribute="leading" id="jXE-lR-Shu"/>
+                            <constraint firstItem="8Dz-eE-LpC" firstAttribute="top" secondItem="n4g-c0-vIH" secondAttribute="bottom" constant="10" id="nVz-8r-uy6"/>
+                            <constraint firstItem="JtG-40-8fN" firstAttribute="bottom" secondItem="Y78-QZ-fJh" secondAttribute="bottom" id="nob-i2-fOG"/>
+                            <constraint firstItem="Y78-QZ-fJh" firstAttribute="centerX" secondItem="6B0-s7-eIU" secondAttribute="centerX" id="oUS-Nv-Vem"/>
+                            <constraint firstItem="7MG-xa-EiB" firstAttribute="top" secondItem="Y78-QZ-fJh" secondAttribute="bottom" constant="19" id="ugl-oY-XUS"/>
+                            <constraint firstItem="JtG-40-8fN" firstAttribute="leading" secondItem="Y78-QZ-fJh" secondAttribute="leading" id="xce-8L-bnL"/>
+                            <constraint firstItem="7MG-xa-EiB" firstAttribute="centerX" secondItem="6B0-s7-eIU" secondAttribute="centerX" id="yWv-yS-0uf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6B0-s7-eIU"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Donate" id="bmY-e3-PDz"/>
+                    <connections>
+                        <outlet property="charityDonateButton" destination="8Dz-eE-LpC" id="BWt-0H-nXm"/>
+                        <outlet property="charityDonationAmountPickerView" destination="n4g-c0-vIH" id="3cy-R2-3zm"/>
+                        <outlet property="charityLogoActivityIndicatorView" destination="JtG-40-8fN" id="lA1-2P-eIx"/>
+                        <outlet property="charityLogoImageView" destination="Y78-QZ-fJh" id="AZg-c4-AmB"/>
+                        <outlet property="charityNameLabel" destination="7MG-xa-EiB" id="8Iu-yK-wG9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qIg-Is-a0e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
