@@ -21,17 +21,15 @@ class CharityDetailViewController: UIViewController, UIPickerViewDataSource, UIP
         
     }
     
-    //property to receive data from MainVC
+    //property to receive data from MainVC and local
     var charity: Charity?
-    
-    var charityLogo = UIImage()
     let donations = Donations().amounts
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         //trigger fetch of charity logo image
-//        performSelector(inBackground: #selector(fireFetchCharityLogoImage), with: nil)
+        performSelector(inBackground: #selector(fireFetchCharityLogoImage), with: nil)
         
         //setup UI
         title = "Donate"
@@ -40,15 +38,36 @@ class CharityDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     
     //MARK: Custom methods
     @objc func fireFetchCharityLogoImage() {
-        //start activity inidicator
-        charityLogoActivityIndicatorView.isHidden = false
-        charityLogoActivityIndicatorView.startAnimating()
         
+        //start activity indicator on logo image view
+        animateActivityIndicator(true)
+
         if let urlString = charity?.logoURL {
-            if let image = CharitiesController.shared.fetchCharityLogoImage(from: urlString) {
-                charityLogo = image
-                charityLogoActivityIndicatorView.isHidden = true
-                charityLogoActivityIndicatorView.stopAnimating()
+            CharitiesController.shared.fetchCharityLogoImage(from: urlString) { [unowned self] (image) in
+                guard let logo = image else { return }
+            
+                DispatchQueue.main.async { [unowned self] in
+                    self.charityLogoImageView.image = logo
+                }
+            }
+        }
+        
+        //stop activity indicator on logo image view
+        animateActivityIndicator(false)
+    }
+    
+    func animateActivityIndicator(_ animate: Bool) {
+        DispatchQueue.main.async { [unowned self] in
+            
+            if animate == true {
+                self.charityLogoActivityIndicatorView.isHidden = false
+                self.charityLogoActivityIndicatorView.alpha = 0.5
+                self.charityLogoActivityIndicatorView.startAnimating()
+            
+            } else {
+                self.charityLogoActivityIndicatorView.isHidden = true
+                self.charityLogoActivityIndicatorView.alpha = 0
+                self.charityLogoActivityIndicatorView.stopAnimating()
             }
         }
     }

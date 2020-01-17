@@ -43,22 +43,32 @@ public struct CharitiesController {
         task.resume()
     }
     
-    func fetchCharityLogoImage(from urlString: String) -> UIImage? {
-        var image = UIImage()
+    func fetchCharityLogoImage(from urlString: String, completion: @escaping (UIImage?) -> Void )  {
         
         //force https
-        let secureURL = urlString.secureURL()
+//        let secureURL = urlString.secureURL()
+        let url = URL(string: urlString)
         
-        //thread management
-        DispatchQueue.global().async {
-            guard let imageData = try? Data(contentsOf: secureURL) else {
-                return
+    
+        let task = URLSession.shared.dataTask(with: url!) {
+            (data, response, error) in
+            
+            if let response = response {
+                print("image server response:\n\(response) ")
             }
             
-            image = UIImage(data: imageData)!
+            if let data = data,
+                let image = UIImage(data: data) {
+                print("successfully fetched image from remote server")
+                completion(image)
+                
+            } else {
+                print("failed to fetch image from remote server with error:\n\(error!.localizedDescription))")
+                completion(nil)
+            }
         }
         
-        return image
+        task.resume()
     }
 }
 
