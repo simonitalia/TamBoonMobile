@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dfc-Cc-ibQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dfc-Cc-ibQ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -56,14 +56,6 @@
                                     <constraint firstAttribute="height" constant="200" id="nCu-rs-CwS"/>
                                 </constraints>
                             </imageView>
-                            <activityIndicatorView hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="JtG-40-8fN">
-                                <rect key="frame" x="197" y="198" width="20" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="0sm-X9-nrg"/>
-                                    <constraint firstAttribute="width" constant="20" id="qB2-NM-Hef"/>
-                                </constraints>
-                                <color key="color" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7MG-xa-EiB" userLabel="Charity Name">
                                 <rect key="frame" x="107" y="327" width="200" height="31"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
@@ -71,7 +63,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="n4g-c0-vIH">
-                                <rect key="frame" x="95" y="363" width="224" height="200"/>
+                                <rect key="frame" x="70" y="363" width="274" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="AYi-Ya-qP8"/>
                                 </constraints>
@@ -94,19 +86,17 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6B0-s7-eIU" firstAttribute="trailing" secondItem="n4g-c0-vIH" secondAttribute="trailing" constant="95" id="4om-oC-hjf"/>
+                            <constraint firstItem="6B0-s7-eIU" firstAttribute="trailing" secondItem="n4g-c0-vIH" secondAttribute="trailing" constant="70" id="4om-oC-hjf"/>
                             <constraint firstItem="8Dz-eE-LpC" firstAttribute="centerX" secondItem="6B0-s7-eIU" secondAttribute="centerX" id="5CY-le-EbE"/>
                             <constraint firstItem="7MG-xa-EiB" firstAttribute="width" secondItem="Y78-QZ-fJh" secondAttribute="width" multiplier="0.275" constant="145" id="6gB-94-ObU"/>
                             <constraint firstItem="n4g-c0-vIH" firstAttribute="centerX" secondItem="6B0-s7-eIU" secondAttribute="centerX" id="8s7-xx-ef6"/>
                             <constraint firstItem="Y78-QZ-fJh" firstAttribute="top" secondItem="6B0-s7-eIU" secondAttribute="top" constant="20" id="DnE-qu-IIr"/>
                             <constraint firstItem="n4g-c0-vIH" firstAttribute="top" secondItem="7MG-xa-EiB" secondAttribute="bottom" constant="5" id="F72-6M-45b"/>
-                            <constraint firstItem="n4g-c0-vIH" firstAttribute="leading" secondItem="6B0-s7-eIU" secondAttribute="leading" constant="95" id="grI-Ln-rrN"/>
+                            <constraint firstItem="n4g-c0-vIH" firstAttribute="leading" secondItem="6B0-s7-eIU" secondAttribute="leading" constant="70" id="grI-Ln-rrN"/>
                             <constraint firstItem="6B0-s7-eIU" firstAttribute="bottom" secondItem="8Dz-eE-LpC" secondAttribute="bottom" constant="150" id="hSc-DP-PbO"/>
-                            <constraint firstItem="JtG-40-8fN" firstAttribute="centerY" secondItem="Y78-QZ-fJh" secondAttribute="centerY" id="hyI-YU-h5T"/>
                             <constraint firstItem="8Dz-eE-LpC" firstAttribute="top" secondItem="n4g-c0-vIH" secondAttribute="bottom" constant="50" id="nVz-8r-uy6"/>
                             <constraint firstItem="Y78-QZ-fJh" firstAttribute="centerX" secondItem="6B0-s7-eIU" secondAttribute="centerX" id="oUS-Nv-Vem"/>
                             <constraint firstItem="7MG-xa-EiB" firstAttribute="top" secondItem="Y78-QZ-fJh" secondAttribute="bottom" constant="19" id="ugl-oY-XUS"/>
-                            <constraint firstItem="JtG-40-8fN" firstAttribute="centerX" secondItem="Y78-QZ-fJh" secondAttribute="centerX" id="yNB-1S-v14"/>
                             <constraint firstItem="7MG-xa-EiB" firstAttribute="centerX" secondItem="6B0-s7-eIU" secondAttribute="centerX" id="yWv-yS-0uf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6B0-s7-eIU"/>
@@ -115,7 +105,6 @@
                     <connections>
                         <outlet property="charityDonateButton" destination="8Dz-eE-LpC" id="BWt-0H-nXm"/>
                         <outlet property="charityDonationAmountPickerView" destination="n4g-c0-vIH" id="3cy-R2-3zm"/>
-                        <outlet property="charityLogoActivityIndicatorView" destination="JtG-40-8fN" id="lA1-2P-eIx"/>
                         <outlet property="charityLogoImageView" destination="Y78-QZ-fJh" id="AZg-c4-AmB"/>
                         <outlet property="charityNameLabel" destination="7MG-xa-EiB" id="8Iu-yK-wG9"/>
                     </connections>

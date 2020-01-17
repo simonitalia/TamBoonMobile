@@ -34,7 +34,7 @@ class CharityDetailViewController: UIViewController, UIPickerViewDataSource, UIP
         super.viewDidLoad()
 
         //setup VC
-        fireFetchCharityLogoImage()
+        performSelector(inBackground: #selector(fireFetchCharityLogoImage), with: nil)
         charityDonationAmountPickerView.delegate = self
         charityDonationAmountPickerView.dataSource = self
         
@@ -44,37 +44,14 @@ class CharityDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     }
     
     //MARK: Custom methods
-    func fireFetchCharityLogoImage() {
-        
-        //start activity indicator on logo image view
-        animateActivityIndicator(true)
+    @objc func fireFetchCharityLogoImage() {
 
         if let urlString = charity?.logoURL {
             CharitiesController.shared.fetchCharityLogoImage(from: urlString) { [unowned self] (image) in
                 guard let logo = image else { return }
-            
                 DispatchQueue.main.async { [unowned self] in
                     self.charityLogoImageView.image = logo
                 }
-            }
-        }
-        
-        //stop activity indicator on logo image view
-        animateActivityIndicator(false)
-    }
-    
-    func animateActivityIndicator(_ animate: Bool) {
-        DispatchQueue.main.async { [unowned self] in
-            
-            if animate == true {
-                self.charityLogoActivityIndicatorView.isHidden = false
-                self.charityLogoActivityIndicatorView.alpha = 0.5
-                self.charityLogoActivityIndicatorView.startAnimating()
-            
-            } else {
-                self.charityLogoActivityIndicatorView.isHidden = true
-                self.charityLogoActivityIndicatorView.alpha = 0
-                self.charityLogoActivityIndicatorView.stopAnimating()
             }
         }
     }
@@ -100,17 +77,17 @@ class CharityDetailViewController: UIViewController, UIPickerViewDataSource, UIP
             
             switch row {
             case 1:
-                return rowTitle.formatTitle() //sets title row 1 to donations index 0 item
+                return rowTitle.formatToString() //sets title row 1 to donations index 0 item
             case 2:
-                return rowTitle.formatTitle()
+                return rowTitle.formatToString()
             case 3:
-                return rowTitle.formatTitle()
+                return rowTitle.formatToString()
             case 4:
-                return rowTitle.formatTitle()
+                return rowTitle.formatToString()
             case 5:
-                return rowTitle.formatTitle()
+                return rowTitle.formatToString()
             case 6:
-                return rowTitle.formatTitle()
+                return rowTitle.formatToString()
             default:
                 fatalError("Error: Unknown donation amount case")
             }
