@@ -16,5 +16,5 @@ struct Donation: Codable {
 }
 
 struct Donations {
-    let amounts: [Int] = [5_000, 10_000, 20_000, 50_000, 100_000, 1000_0000_000]
+    let amounts: [Int] = [5_000, 10_000, 20_000, 50_000, 100_000, 1_0000_000]
 }

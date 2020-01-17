@@ -23,7 +23,7 @@ public struct CharitiesController {
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             
             if let response = response {
-                print("Remote server responded with:\n\(response)")
+//                print("Remote server responded with:\n\(response)")
             }
             
             let jsonDecoder = JSONDecoder()
@@ -49,21 +49,20 @@ public struct CharitiesController {
 //        let secureURL = urlString.secureURL()
         let url = URL(string: urlString)
         
-    
         let task = URLSession.shared.dataTask(with: url!) {
             (data, response, error) in
             
             if let response = response {
-                print("image server response:\n\(response) ")
+//                print("image server response:\n\(response) ")
             }
             
             if let data = data,
                 let image = UIImage(data: data) {
-                print("successfully fetched image from remote server")
+                print("Successfully fetched image from remote server")
                 completion(image)
                 
             } else {
-                print("failed to fetch image from remote server with error:\n\(error!.localizedDescription))")
+                print("Failed to fetch image from remote server with error:\n\(error!.localizedDescription))")
                 completion(nil)
             }
         }

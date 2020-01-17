@@ -19,6 +19,11 @@ class CharityDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     
     @IBAction func charityDonateButtonTapped(_ sender: Any) {
         
+        //Animate button when tapped
+        UIView.animate(withDuration: 0.3) {
+            self.charityDonateButton.transform = CGAffineTransform(scaleX: 3.0, y: 3.0)
+            self.charityDonateButton.transform = .identity
+        }
     }
     
     //property to receive data from MainVC and local
@@ -28,8 +33,10 @@ class CharityDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //trigger fetch of charity logo image
-        performSelector(inBackground: #selector(fireFetchCharityLogoImage), with: nil)
+        //setup VC
+        fireFetchCharityLogoImage()
+        charityDonationAmountPickerView.delegate = self
+        charityDonationAmountPickerView.dataSource = self
         
         //setup UI
         title = "Donate"
@@ -37,7 +44,7 @@ class CharityDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     }
     
     //MARK: Custom methods
-    @objc func fireFetchCharityLogoImage() {
+    func fireFetchCharityLogoImage() {
         
         //start activity indicator on logo image view
         animateActivityIndicator(true)
@@ -74,37 +81,40 @@ class CharityDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     
     //MARK: PickerView data source and delegate methods
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        //set number of wheels
+        //set number of columns
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         //set number of donation items
-        return donations.count
+        return donations.count + 1
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-    
-        let rowTitle = donations[row] //set title to donation amount
         
-        //set each picker row title to donation amount
-        switch component {
-        case 0:
-            return rowTitle.formatTitle() //sets title row 0 to donations index 0 item
-        case 1:
-            return rowTitle.formatTitle()
-        case 2:
-            return rowTitle.formatTitle()
-        case 3:
-            return rowTitle.formatTitle()
-        case 4:
-            return rowTitle.formatTitle()
+        if row == 0 {
+            return "Select Donation Amount:" //set initial picker title
+        
+        } else {
+            let rowTitle = donations[row-1] //set title to dontion amount (minus 1 to start at index 0)
             
-        default:
-            fatalError("Error: Unknown donation amount case")
+            switch row {
+            case 1:
+                return rowTitle.formatTitle() //sets title row 1 to donations index 0 item
+            case 2:
+                return rowTitle.formatTitle()
+            case 3:
+                return rowTitle.formatTitle()
+            case 4:
+                return rowTitle.formatTitle()
+            case 5:
+                return rowTitle.formatTitle()
+            case 6:
+                return rowTitle.formatTitle()
+            default:
+                fatalError("Error: Unknown donation amount case")
+            }
         }
-        
     }
     
-
 }

@@ -12,7 +12,7 @@ extension Int {
     
     //convert format of Int > String
     func formatTitle() -> String {
-        return String(format: "THB", self)
+        let formatedString = String(self)
+        return "THB "+formatedString
     }
-    
 }
