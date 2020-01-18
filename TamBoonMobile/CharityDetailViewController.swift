@@ -23,7 +23,7 @@ class CharityDetailViewController: UIViewController, UIPickerViewDataSource, UIP
         super.viewDidLoad()
 
         //setup VC and fetch of charity logo from remote server
-        performSelector(inBackground: #selector(fireFetchCharityLogoImage), with: nil)
+        performSelector(inBackground: #selector(fireGetCharityLogoImage), with: nil)
         charityDonationAmountPickerView.delegate = self
         charityDonationAmountPickerView.dataSource = self
         
@@ -32,10 +32,10 @@ class CharityDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     }
     
     //MARK: Custom methods
-    @objc func fireFetchCharityLogoImage() {
+    @objc func fireGetCharityLogoImage() {
 
         if let urlString = charity?.logoURL {
-            CharitiesController.shared.fetchCharityLogoImage(from: urlString) { [unowned self] (image) in
+            CharitiesController.shared.getCharityLogoImage(from: urlString) { [unowned self] (image) in
                 guard let logo = image else { return }
                 DispatchQueue.main.async { [unowned self] in
                     self.charityLogoImageView.image = logo
@@ -88,7 +88,7 @@ class CharityDetailViewController: UIViewController, UIPickerViewDataSource, UIP
             
             //pass donation amount from selected picker row, to destinaiton vc
             let row = charityDonationAmountPickerView.selectedRow(inComponent: 0)
-            vc.donationAmount = donations[row]
+            vc.amount = donations[row]
         
         } else {
             print("Failed to push to SubmitDonationVC")

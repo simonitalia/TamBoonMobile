@@ -20,7 +20,7 @@ class CharitiesTableViewController: UITableViewController {
         title = "Loading..."
 
         //trigger fetch of charities data fron remote api server on background thread
-        performSelector(inBackground: #selector(fireFetchCharitiesList), with: nil)
+        performSelector(inBackground: #selector(fireGetCharitiesList), with: nil)
         
         tableView.tableFooterView = UIView()
         //hides empty row seperators
@@ -36,18 +36,11 @@ class CharitiesTableViewController: UITableViewController {
         }
     }
     
-    @objc func fireFetchCharitiesList() {
-        let endpoint = APIEndpoint.charities.rawValue
-        CharitiesController.shared.fetchCharitiesList(from: endpoint) { [unowned self] (data, error) in
-            if let data = data {
-                self.charities = data
+    @objc func fireGetCharitiesList() {
+        CharitiesController.shared.getCharitiesList() { [unowned self] (charities) in
+            if let charities = charities {
+                self.charities = charities
                 self.updateUI() //refresh tableView with fetched data
-                print("TableVC successfully received Charities data: \(String(describing: self.charities))")
-                
-            } else {
-                if let error = error {
-                    print(error.localizedDescription)
-                }
             }
         }
     }

@@ -18,6 +18,6 @@ struct Result: Codable {
     enum CodingKeys: String, CodingKey {
         case success
         case errorCode = "error_code"
-        case errorMessage = "error_messaege"
+        case errorMessage = "error_message"
     }
 }

@@ -15,7 +15,6 @@
 		2A5BF28823CE99FE00D3ED2E /* TamBoonMobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5BF28723CE99FE00D3ED2E /* TamBoonMobileTests.swift */; };
 		2A5BF29323CE99FF00D3ED2E /* TamBoonMobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5BF29223CE99FF00D3ED2E /* TamBoonMobileUITests.swift */; };
 		2A5BF2A123CE9A3100D3ED2E /* Charity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5BF2A023CE9A3100D3ED2E /* Charity.swift */; };
-		2A5BF2A323CE9AB000D3ED2E /* Donation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5BF2A223CE9AB000D3ED2E /* Donation.swift */; };
 		2A5BF2A523CEA5D000D3ED2E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5BF2A423CEA5D000D3ED2E /* Result.swift */; };
 		2A5BF2A823CEAC4A00D3ED2E /* CharitiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5BF2A723CEAC4A00D3ED2E /* CharitiesController.swift */; };
 		2A5BF2AA23CEAF1200D3ED2E /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5BF2A923CEAF1200D3ED2E /* APIEndpoint.swift */; };
@@ -24,6 +23,7 @@
 		2A9B0C7223D06CA4006C9703 /* CharityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9B0C7123D06CA4006C9703 /* CharityDetailViewController.swift */; };
 		2A9B0C7423D14826006C9703 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9B0C7323D14826006C9703 /* Int+Extensions.swift */; };
 		2AE54B1B23D2E5A200055A15 /* SubmitDonationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE54B1A23D2E5A200055A15 /* SubmitDonationViewController.swift */; };
+		2AE54B1D23D31EEB00055A15 /* Donation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE54B1C23D31EEB00055A15 /* Donation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +58,6 @@
 		2A5BF29223CE99FF00D3ED2E /* TamBoonMobileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamBoonMobileUITests.swift; sourceTree = "<group>"; };
 		2A5BF29423CE99FF00D3ED2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A5BF2A023CE9A3100D3ED2E /* Charity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charity.swift; sourceTree = "<group>"; };
-		2A5BF2A223CE9AB000D3ED2E /* Donation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Donation.swift; path = TamBoonMobile/DataModels/Donation.swift; sourceTree = SOURCE_ROOT; };
 		2A5BF2A423CEA5D000D3ED2E /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		2A5BF2A723CEAC4A00D3ED2E /* CharitiesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharitiesController.swift; sourceTree = "<group>"; };
 		2A5BF2A923CEAF1200D3ED2E /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
@@ -67,6 +66,7 @@
 		2A9B0C7123D06CA4006C9703 /* CharityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityDetailViewController.swift; sourceTree = "<group>"; };
 		2A9B0C7323D14826006C9703 /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 		2AE54B1A23D2E5A200055A15 /* SubmitDonationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitDonationViewController.swift; sourceTree = "<group>"; };
+		2AE54B1C23D31EEB00055A15 /* Donation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Donation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +120,7 @@
 				2A5BF27023CE99F500D3ED2E /* AppDelegate.swift */,
 				2A5BF27223CE99F500D3ED2E /* SceneDelegate.swift */,
 				2A9B0C6E23D0305A006C9703 /* Helpers+Extensions */,
-				2A5BF2A623CEAA5E00D3ED2E /* DataModels */,
+				2A5BF2A623CEAA5E00D3ED2E /* DataModels+NetworkControllers */,
 				2A5BF2AB23CF1AEF00D3ED2E /* CharitiesTableViewController.swift */,
 				2A9B0C7123D06CA4006C9703 /* CharityDetailViewController.swift */,
 				2AE54B1A23D2E5A200055A15 /* SubmitDonationViewController.swift */,
@@ -150,16 +150,16 @@
 			path = TamBoonMobileUITests;
 			sourceTree = "<group>";
 		};
-		2A5BF2A623CEAA5E00D3ED2E /* DataModels */ = {
+		2A5BF2A623CEAA5E00D3ED2E /* DataModels+NetworkControllers */ = {
 			isa = PBXGroup;
 			children = (
+				2A5BF2A023CE9A3100D3ED2E /* Charity.swift */,
+				2A5BF2A423CEA5D000D3ED2E /* Result.swift */,
+				2AE54B1C23D31EEB00055A15 /* Donation.swift */,
 				2A5BF2A923CEAF1200D3ED2E /* APIEndpoint.swift */,
 				2A5BF2A723CEAC4A00D3ED2E /* CharitiesController.swift */,
-				2A5BF2A023CE9A3100D3ED2E /* Charity.swift */,
-				2A5BF2A223CE9AB000D3ED2E /* Donation.swift */,
-				2A5BF2A423CEA5D000D3ED2E /* Result.swift */,
 			);
-			path = DataModels;
+			path = "DataModels+NetworkControllers";
 			sourceTree = "<group>";
 		};
 		2A9B0C6E23D0305A006C9703 /* Helpers+Extensions */ = {
@@ -311,7 +311,7 @@
 				2A9B0C7423D14826006C9703 /* Int+Extensions.swift in Sources */,
 				2A5BF2A823CEAC4A00D3ED2E /* CharitiesController.swift in Sources */,
 				2A9B0C7223D06CA4006C9703 /* CharityDetailViewController.swift in Sources */,
-				2A5BF2A323CE9AB000D3ED2E /* Donation.swift in Sources */,
+				2AE54B1D23D31EEB00055A15 /* Donation.swift in Sources */,
 				2A5BF27323CE99F500D3ED2E /* SceneDelegate.swift in Sources */,
 				2A5BF2AA23CEAF1200D3ED2E /* APIEndpoint.swift in Sources */,
 			);

@@ -13,6 +13,13 @@ struct Donation: Codable {
     let name: String
     let token: String
     let amount: Int
+    
+    //initializer
+    init(name: String, token: String, amount: Int) {
+        self.name = name
+        self.token = token
+        self.amount = amount
+    }
 }
 
 struct Donations {
