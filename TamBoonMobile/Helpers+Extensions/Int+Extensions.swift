@@ -14,7 +14,7 @@ extension Int {
     func formatToString() -> String {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
-        let formatedString = numberFormatter.string(from: NSNumber(value: self))
-        return "THB "+formatedString!
+        let formattedString = numberFormatter.string(from: NSNumber(value: self))
+        return "THB "+formattedString!
     }
 }

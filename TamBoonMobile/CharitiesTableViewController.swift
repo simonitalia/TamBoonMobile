@@ -78,7 +78,6 @@ class CharitiesTableViewController: UITableViewController {
     
 
     // MARK: - Navigation
-
     //setup segue to destination vc
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         

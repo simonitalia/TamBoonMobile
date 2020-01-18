@@ -12,19 +12,8 @@ class CharityDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     
     //Storyboard outlets
     @IBOutlet weak var charityLogoImageView: UIImageView!
-    @IBOutlet weak var charityLogoActivityIndicatorView: UIActivityIndicatorView!
-    @IBOutlet weak var charityNameLabel: UILabel!
     @IBOutlet weak var charityDonationAmountPickerView: UIPickerView!
     @IBOutlet weak var charityDonateButton: UIButton!
-    
-    @IBAction func charityDonateButtonTapped(_ sender: Any) {
-        
-        //Animate button when tapped
-        UIView.animate(withDuration: 0.3) {
-            self.charityDonateButton.transform = CGAffineTransform(scaleX: 3.0, y: 3.0)
-            self.charityDonateButton.transform = .identity
-        }
-    }
     
     //property to receive data from MainVC and local
     var charity: Charity?
@@ -33,14 +22,13 @@ class CharityDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //setup VC
+        //setup VC and fetch of charity logo from remote server
         performSelector(inBackground: #selector(fireFetchCharityLogoImage), with: nil)
         charityDonationAmountPickerView.delegate = self
         charityDonationAmountPickerView.dataSource = self
         
         //setup UI
-        title = "Donate"
-        charityNameLabel.text = charity?.name
+        title = charity?.name ?? "Donate"
     }
     
     //MARK: Custom methods
@@ -58,39 +46,52 @@ class CharityDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     
     //MARK: PickerView data source and delegate methods
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        //set number of columns
         return 1
+            //sets number of columns
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        //set number of donation items
-        return donations.count + 1
+        return donations.count
+            //sets number of donation items
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        if row == 0 {
-            return "Select Donation Amount:" //set initial picker title
+        //set title to dontion amount
+        let rowTitle = donations[row]
+        
+        switch row {
+        case 0:
+            return rowTitle.formatToString() 
+        case 1:
+            return rowTitle.formatToString()
+        case 2:
+            return rowTitle.formatToString()
+        case 3:
+            return rowTitle.formatToString()
+        case 4:
+            return rowTitle.formatToString()
+        case 5:
+            return rowTitle.formatToString()
+        default:
+            fatalError("Error: Unknown donation amount case")
+        }
+    }
+    
+    // MARK: - Navigation
+    //setup segue to destination vc
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // get destinaton view controller
+        if segue.identifier == "CharityDetailVCToSubmitDonationVC" {
+            let vc = segue.destination as! SubmitDonationViewController
+            
+            //pass donation amount from selected picker row, to destinaiton vc
+            let row = charityDonationAmountPickerView.selectedRow(inComponent: 0)
+            vc.donationAmount = donations[row]
         
         } else {
-            let rowTitle = donations[row-1] //set title to dontion amount (minus 1 to start at index 0)
-            
-            switch row {
-            case 1:
-                return rowTitle.formatToString() //sets title row 1 to donations index 0 item
-            case 2:
-                return rowTitle.formatToString()
-            case 3:
-                return rowTitle.formatToString()
-            case 4:
-                return rowTitle.formatToString()
-            case 5:
-                return rowTitle.formatToString()
-            case 6:
-                return rowTitle.formatToString()
-            default:
-                fatalError("Error: Unknown donation amount case")
-            }
+            print("Failed to push to SubmitDonationVC")
         }
     }
     

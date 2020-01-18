@@ -23,6 +23,7 @@
 		2A9B0C6D23D03042006C9703 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9B0C6C23D03042006C9703 /* String+Extensions.swift */; };
 		2A9B0C7223D06CA4006C9703 /* CharityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9B0C7123D06CA4006C9703 /* CharityDetailViewController.swift */; };
 		2A9B0C7423D14826006C9703 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9B0C7323D14826006C9703 /* Int+Extensions.swift */; };
+		2AE54B1B23D2E5A200055A15 /* SubmitDonationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE54B1A23D2E5A200055A15 /* SubmitDonationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		2A9B0C6C23D03042006C9703 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		2A9B0C7123D06CA4006C9703 /* CharityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityDetailViewController.swift; sourceTree = "<group>"; };
 		2A9B0C7323D14826006C9703 /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
+		2AE54B1A23D2E5A200055A15 /* SubmitDonationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitDonationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				2A5BF2A623CEAA5E00D3ED2E /* DataModels */,
 				2A5BF2AB23CF1AEF00D3ED2E /* CharitiesTableViewController.swift */,
 				2A9B0C7123D06CA4006C9703 /* CharityDetailViewController.swift */,
+				2AE54B1A23D2E5A200055A15 /* SubmitDonationViewController.swift */,
 				2A5BF27623CE99F600D3ED2E /* Main.storyboard */,
 				2A5BF27923CE99FE00D3ED2E /* Assets.xcassets */,
 				2A5BF27B23CE99FE00D3ED2E /* LaunchScreen.storyboard */,
@@ -299,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AE54B1B23D2E5A200055A15 /* SubmitDonationViewController.swift in Sources */,
 				2A5BF2A523CEA5D000D3ED2E /* Result.swift in Sources */,
 				2A9B0C6D23D03042006C9703 /* String+Extensions.swift in Sources */,
 				2A5BF2A123CE9A3100D3ED2E /* Charity.swift in Sources */,
