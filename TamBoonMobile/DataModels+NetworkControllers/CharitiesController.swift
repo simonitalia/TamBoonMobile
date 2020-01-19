@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-//this struct manages with fetching data from the remote server api endpoints
+//this struct manages fetching data from the remote servers
 public struct CharitiesController {
     static var shared = CharitiesController()
         //static global varibale accessible anywhere within app

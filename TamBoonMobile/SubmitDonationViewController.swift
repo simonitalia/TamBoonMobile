@@ -49,15 +49,23 @@ class SubmitDonationViewController: UIViewController {
         let donation = Donation(name: name, token: token, amount: amount!)
         
         CharitiesController.shared.postDonation(donation) { [unowned self] (result, error) in
+            
             if let result = result {
                 self.result = result
-                self.showAlert(success: true, errorMessage: nil)
+
+                //handle successful results, good and bad scenarios
+                if result.success {
+                    self.showAlert(success: true, errorMessage: nil)
+   
+                } else {
+                    self.showAlert(success: false, errorMessage: nil)
+                }
             
+            //handle network, connection or other issues
             } else {
-                if let _ = error {
-                    let message = error?.localizedDescription
-                    self.showAlert(success: false, errorMessage: message)
-                       
+                if let error = error {
+                    let message = error.localizedDescription
+                    self.showAlert(success: nil, errorMessage: message)
                 }
             }
         }
@@ -85,22 +93,37 @@ class SubmitDonationViewController: UIViewController {
         }
     }
     
-    func showAlert(success: Bool, errorMessage: String?) {
+    func showAlert(success: Bool?, errorMessage: String?) {
         DispatchQueue.main.async { [unowned self] in
-            if success == true {
-                let formattedAmount = self.amount!.formatToString()
-                let ac = UIAlertController(title: "Thank you ❤️", message: "Your donation of \(formattedAmount) was received!", preferredStyle: .alert)
-                ac.addAction(UIAlertAction(title: "OK", style: .default, handler: {
-                    action in self.dismissSubmitDonationVC()
-                }))
-                
-                self.present(ac, animated: true)
-                
-            } else {
-                let ac = UIAlertController(title: "We had a problem ☹️", message: "\(errorMessage ?? "")\nPlease try again.", preferredStyle: .alert)
-                ac.addAction(UIAlertAction(title: "OK", style: .default))
-                self.present(ac, animated: true)
+            var title = ""
+            var message = ""
+            var ac = UIAlertController()
+            var action = UIAlertAction()
+            
+            if success != nil {
+                if success == true {
+                    let formattedAmount = self.amount!.formatToString()
+                    title = "Thank you! ❤️"
+                    message = "Your donation of \(formattedAmount) was received."
+                    action = UIAlertAction(title: "OK", style: .default, handler: {
+                        action in self.dismissSubmitDonationVC()
+                    })
+                    
+                } else {
+                    title = "\(self.result!.errorMessage)"
+                    message = "Please try again, or use a different card."
+                    action = UIAlertAction(title: "OK", style: .default)
+                }
+            
+            } else if errorMessage != nil {
+                title = "We had a problem! ☹️"
+                message = "\(errorMessage ?? "")\nPlease try again."
+                action = UIAlertAction(title: "OK", style: .default)
             }
+            
+            ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            ac.addAction(action)
+            self.present(ac, animated: true)
         }
     }
     

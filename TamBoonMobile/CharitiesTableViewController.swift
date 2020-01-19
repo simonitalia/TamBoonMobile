@@ -23,7 +23,7 @@ class CharitiesTableViewController: UITableViewController {
         performSelector(inBackground: #selector(fireGetCharitiesList), with: nil)
         
         tableView.tableFooterView = UIView()
-        //hides empty row seperators
+            //hides empty row seperators
     }
     
     //MARK: Custom methods
