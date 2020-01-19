@@ -10,7 +10,6 @@ import UIKit
 
 class SubmitDonationViewController: UIViewController {
     
-    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var donationAmountLabel: UILabel!
     @IBOutlet weak var donateButton: UIButton!
     @IBAction func donateButtonTapped(_ sender: Any) {
