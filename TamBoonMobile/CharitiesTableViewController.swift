@@ -86,6 +86,12 @@ class CharitiesTableViewController: UITableViewController {
             print("Failed to push to CharityDetailVC")
         }
     }
+    
+    //unwind segue to present this vc after donation transaction is complete
+    @IBAction func unwindToCharitiesTableVC(segue: UIStoryboardSegue) {
+    }
+    
+
 }
 
 

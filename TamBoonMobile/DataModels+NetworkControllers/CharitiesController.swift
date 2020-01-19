@@ -23,19 +23,19 @@ public struct CharitiesController {
         guard let url = baseURL?.appendingPathComponent(endpoint) else {return}
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            
             let jsonDecoder = JSONDecoder()
+            
             if let data = data,
                 let charityList = try? jsonDecoder.decode(CharityList.self, from: data) {
                 print("Succesfully fetched charities data from remote server, passing data to caller")
                 completion(charityList.charities)
                 
-                } else {
-                    if let error = error {
-                        print("Failed to fetch charities data from remote server with error:\n\(error.localizedDescription)")
-                        completion(nil)
-                    }
+            } else {
+                if let error = error {
+                    print("Failed to fetch charities data from remote server with error:\n\(error.localizedDescription)")
+                    completion(nil)
                 }
+            }
         }
         
         task.resume()
@@ -47,8 +47,7 @@ public struct CharitiesController {
 //        let secureURL = urlString.secureURL()
         let url = URL(string: urlString)
         
-        let task = URLSession.shared.dataTask(with: url!) {
-            (data, response, error) in
+        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
             
             if let data = data,
                 let image = UIImage(data: data) {
@@ -71,13 +70,10 @@ public struct CharitiesController {
     func postDonation(_ data: Donation, completion: @escaping (Result?, Error?) -> Void) {
         let endpoint = APIEndpoint.donations.rawValue
         guard let url = baseURL?.appendingPathComponent(endpoint) else {return}
-        
-        //set requesr method as POST
+
         var requestType = URLRequest(url: url)
         requestType.httpMethod = "POST"
         requestType.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        //encode object as JSON
         let jsonEncoder = JSONEncoder()
         let jsonData = try? jsonEncoder.encode(data)
         

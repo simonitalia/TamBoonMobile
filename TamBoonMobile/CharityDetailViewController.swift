@@ -35,7 +35,7 @@ class CharityDetailViewController: UIViewController, UIPickerViewDataSource, UIP
     @objc func fireGetCharityLogoImage() {
 
         if let urlString = charity?.logoURL {
-            CharitiesController.shared.getCharityLogoImage(from: urlString) { [unowned self] (image) in
+            CharitiesController.shared.getCharityLogoImage(from: urlString) { (image) in
                 guard let logo = image else { return }
                 DispatchQueue.main.async { [unowned self] in
                     self.charityLogoImageView.image = logo
