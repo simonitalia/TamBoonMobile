@@ -121,9 +121,7 @@
 				2A5BF27223CE99F500D3ED2E /* SceneDelegate.swift */,
 				2A9B0C6E23D0305A006C9703 /* Helpers+Extensions */,
 				2A5BF2A623CEAA5E00D3ED2E /* DataModels+NetworkControllers */,
-				2A5BF2AB23CF1AEF00D3ED2E /* CharitiesTableViewController.swift */,
-				2A9B0C7123D06CA4006C9703 /* CharityDetailViewController.swift */,
-				2AE54B1A23D2E5A200055A15 /* SubmitDonationViewController.swift */,
+				2A7B106D23D48750005CD0F7 /* ViewControllers */,
 				2A5BF27623CE99F600D3ED2E /* Main.storyboard */,
 				2A5BF27923CE99FE00D3ED2E /* Assets.xcassets */,
 				2A5BF27B23CE99FE00D3ED2E /* LaunchScreen.storyboard */,
@@ -160,6 +158,16 @@
 				2A5BF2A723CEAC4A00D3ED2E /* CharitiesController.swift */,
 			);
 			path = "DataModels+NetworkControllers";
+			sourceTree = "<group>";
+		};
+		2A7B106D23D48750005CD0F7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2A5BF2AB23CF1AEF00D3ED2E /* CharitiesTableViewController.swift */,
+				2A9B0C7123D06CA4006C9703 /* CharityDetailViewController.swift */,
+				2AE54B1A23D2E5A200055A15 /* SubmitDonationViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		2A9B0C6E23D0305A006C9703 /* Helpers+Extensions */ = {

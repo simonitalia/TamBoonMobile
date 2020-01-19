@@ -77,7 +77,7 @@ class SubmitDonationViewController: UIViewController {
     func animateActivityIndicator(animate: Bool) {
         DispatchQueue.main.async { [unowned self] in
             
-            if animate == true {
+            if animate {
                 self.activityIndicatorView.isHidden = false
                 self.activityIndicatorView.alpha = 1.0
                 self.activityIndicatorView.startAnimating()
@@ -132,6 +132,4 @@ class SubmitDonationViewController: UIViewController {
         self.performSegue(withIdentifier: "DismissSubmitDonationVC", sender: self)
             //created by manually connecting vc icon to exit icon in storyboard
     }
-    
-    
 }

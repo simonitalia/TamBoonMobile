@@ -20,25 +20,31 @@ public struct CharitiesController {
     //call to api server endpoint to fetch requested data
     func getCharitiesList(completion: @escaping ([Charity]?) -> Void) {
         let endpoint = APIEndpoint.charities.rawValue
-        guard let url = baseURL?.appendingPathComponent(endpoint) else {return}
-        
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            let jsonDecoder = JSONDecoder()
+        let url = baseURL?.appendingPathComponent(endpoint)
+        let dataTask = URLSession.shared.dataTask(with: url!) { (data, response, error) in
             
-            if let data = data,
-                let charityList = try? jsonDecoder.decode(CharityList.self, from: data) {
-                print("Succesfully fetched charities data from remote server, passing data to caller")
-                completion(charityList.charities)
+            //capture server response details for debugging
+            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
+                print("Remote server reponded with status code: \(httpResponse.statusCode)")
                 
-            } else {
-                if let error = error {
-                    print("Failed to fetch charities data from remote server with error:\n\(error.localizedDescription)")
-                    completion(nil)
+                if let data = data,
+                    let charityList = try? JSONDecoder().decode(CharityList.self, from: data) {
+                    print("Succesfully fetched charities data from remote server, passing data to caller")
+                    completion(charityList.charities)
                 }
+
+            } else {
+                //catch server responsed with invalid status code, trigger alert to user to take action
             }
+            
+            if let error = error {
+                print("Failed to fetch charities data from remote server with error:\n\(error.localizedDescription)")
+                completion(nil)
+            }
+            
         }
         
-        task.resume()
+        dataTask.resume()
     }
     
     func getCharityLogoImage(from urlString: String, completion: @escaping (UIImage?) -> Void )  {
@@ -46,8 +52,13 @@ public struct CharitiesController {
         //force https
 //        let secureURL = urlString.secureURL()
         let url = URL(string: urlString)
-        
-        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+        let dataTask = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+            
+            //capture server response details for debugging
+            if let httpResponse = response as? HTTPURLResponse {
+                let statusCode = httpResponse.statusCode
+                print("Remote image server reponded with status code: \(statusCode)")
+            }
             
             if let data = data,
                 let image = UIImage(data: data) {
@@ -62,47 +73,45 @@ public struct CharitiesController {
             }
         }
         
-        task.resume()
+        dataTask.resume()
     }
     
     //MARK: - POST requests
     //post Donation object to remote API server
     func postDonation(_ data: Donation, completion: @escaping (Result?, Error?) -> Void) {
         let endpoint = APIEndpoint.donations.rawValue
-        guard let url = baseURL?.appendingPathComponent(endpoint) else {return}
+        let url = baseURL?.appendingPathComponent(endpoint)
 
-        var requestType = URLRequest(url: url)
+        var requestType = URLRequest(url: url!)
         requestType.httpMethod = "POST"
         requestType.setValue("application/json", forHTTPHeaderField: "Content-Type")
         let jsonEncoder = JSONEncoder()
-        let jsonData = try? jsonEncoder.encode(data)
+        requestType.httpBody = try? jsonEncoder.encode(data)
         
-        //add data to url
-        requestType.httpBody = jsonData
-        let task = URLSession.shared.dataTask(with: requestType) {
-            (data, response, error) in
+        let dataTask = URLSession.shared.dataTask(with: requestType) { (data, response, error) in
             
             //capture server response details for debugging
-//            if let response = response {
-//                print("Remote server reponded with\n\(response)")
-//            }
+            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 201 {
+            print("Remote server reponded with status code: \(httpResponse.statusCode)")
             
-            let jsonDecoder = JSONDecoder()
-            if let data = data,
-                let result = try? jsonDecoder.decode(Result.self, from: data) {
-                print("POST of Donation data to remote server was successful, passing Result to caller")
-                completion(result, nil)
+                if let data = data,
+                    let result = try? JSONDecoder().decode(Result.self, from: data) {
+                    print("POST of Donation data to remote server was successful, passing Result to caller")
+                    completion(result, nil)
+                }
                 
             } else {
-                if let error = error {
-                    print("Failed to POST Donation data to remote server with error:\n\(error.localizedDescription))")
-                    completion(nil, error)
-                        //also pass error back to caller to take action / notify user
-                }
+                //catch server responsed with invalid status code. Trigger alert to user to take action
+            }
+            
+            if let error = error {
+                print("Failed to POST Donation data to remote server with error:\n\(error.localizedDescription))")
+                completion(nil, error)
+                    //also pass error back to caller to take action / notify user
             }
         }
         
-        task.resume()
+        dataTask.resume()
     }
 }
 
