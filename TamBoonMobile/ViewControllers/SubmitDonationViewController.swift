@@ -40,8 +40,7 @@ class SubmitDonationViewController: UIViewController {
     }
     
     func postDonation() {
-        
-//        animateActivityIndicator(animate: true)
+        self.showSpinner()
         
         //Instantiate Donation with mock data, except for amount
         let name = "John Doe"
@@ -52,6 +51,7 @@ class SubmitDonationViewController: UIViewController {
             
             if let result = result {
                 self.result = result
+                self.hideSpinner()
 
                 //handle successful results, good and bad scenarios
                 if result.success {
@@ -64,31 +64,10 @@ class SubmitDonationViewController: UIViewController {
             //handle network, connection or other issues
             } else {
                 if let error = error {
+                    self.hideSpinner()
                     let message = error.localizedDescription
                     self.showAlert(success: nil, errorMessage: message)
                 }
-            }
-        }
-        
-//        self.animateActivityIndicator(animate: false)
-        
-    }
-    
-    func animateActivityIndicator(animate: Bool) {
-        DispatchQueue.main.async { [unowned self] in
-            
-            if animate {
-                self.activityIndicatorView.isHidden = false
-                self.activityIndicatorView.alpha = 1.0
-                self.activityIndicatorView.startAnimating()
-                self.view.isUserInteractionEnabled = false
-                
-            
-            } else {
-                self.activityIndicatorView.isHidden = true
-                self.activityIndicatorView.alpha = 0
-                self.activityIndicatorView.stopAnimating()
-                self.view.isUserInteractionEnabled = true
             }
         }
     }

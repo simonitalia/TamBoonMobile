@@ -19,6 +19,7 @@
 		2A5BF2A823CEAC4A00D3ED2E /* CharitiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5BF2A723CEAC4A00D3ED2E /* CharitiesController.swift */; };
 		2A5BF2AA23CEAF1200D3ED2E /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5BF2A923CEAF1200D3ED2E /* APIEndpoint.swift */; };
 		2A5BF2AC23CF1AEF00D3ED2E /* CharitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5BF2AB23CF1AEF00D3ED2E /* CharitiesTableViewController.swift */; };
+		2A7B107123D50C70005CD0F7 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7B107023D50C70005CD0F7 /* UIViewController+Extensions.swift */; };
 		2A9B0C6D23D03042006C9703 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9B0C6C23D03042006C9703 /* String+Extensions.swift */; };
 		2A9B0C7223D06CA4006C9703 /* CharityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9B0C7123D06CA4006C9703 /* CharityDetailViewController.swift */; };
 		2A9B0C7423D14826006C9703 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9B0C7323D14826006C9703 /* Int+Extensions.swift */; };
@@ -62,6 +63,7 @@
 		2A5BF2A723CEAC4A00D3ED2E /* CharitiesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharitiesController.swift; sourceTree = "<group>"; };
 		2A5BF2A923CEAF1200D3ED2E /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 		2A5BF2AB23CF1AEF00D3ED2E /* CharitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharitiesTableViewController.swift; sourceTree = "<group>"; };
+		2A7B107023D50C70005CD0F7 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+Extensions.swift"; path = "TamBoonMobile/ViewControllers/UIViewController+Extensions.swift"; sourceTree = SOURCE_ROOT; };
 		2A9B0C6C23D03042006C9703 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		2A9B0C7123D06CA4006C9703 /* CharityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharityDetailViewController.swift; sourceTree = "<group>"; };
 		2A9B0C7323D14826006C9703 /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			children = (
 				2A9B0C6C23D03042006C9703 /* String+Extensions.swift */,
 				2A9B0C7323D14826006C9703 /* Int+Extensions.swift */,
+				2A7B107023D50C70005CD0F7 /* UIViewController+Extensions.swift */,
 			);
 			path = "Helpers+Extensions";
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				2A9B0C6D23D03042006C9703 /* String+Extensions.swift in Sources */,
 				2A5BF2A123CE9A3100D3ED2E /* Charity.swift in Sources */,
 				2A5BF2AC23CF1AEF00D3ED2E /* CharitiesTableViewController.swift in Sources */,
+				2A7B107123D50C70005CD0F7 /* UIViewController+Extensions.swift in Sources */,
 				2A5BF27123CE99F500D3ED2E /* AppDelegate.swift in Sources */,
 				2A9B0C7423D14826006C9703 /* Int+Extensions.swift in Sources */,
 				2A5BF2A823CEAC4A00D3ED2E /* CharitiesController.swift in Sources */,

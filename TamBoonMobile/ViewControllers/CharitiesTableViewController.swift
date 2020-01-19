@@ -21,7 +21,6 @@ class CharitiesTableViewController: UITableViewController {
 
         //trigger fetch of charities data fron remote api server on background thread
         performSelector(inBackground: #selector(fireGetCharitiesList), with: nil)
-        
         tableView.tableFooterView = UIView()
             //hides empty row seperators
     }
@@ -37,10 +36,18 @@ class CharitiesTableViewController: UITableViewController {
     }
     
     @objc func fireGetCharitiesList() {
-        CharitiesController.shared.getCharitiesList() { [unowned self] (charities) in
+        self.showSpinner()
+        CharitiesController.shared.getCharitiesList() { [unowned self] (charities, error) in
             if let charities = charities {
                 self.charities = charities
                 self.updateUI() //refresh tableView with fetched data
+                self.hideSpinner()
+            
+            } else {
+                if let _ = error {
+                    self.hideSpinner()
+                    //FUTURE: Show alert
+                }
             }
         }
     }

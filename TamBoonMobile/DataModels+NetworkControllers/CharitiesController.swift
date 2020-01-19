@@ -18,7 +18,7 @@ public struct CharitiesController {
     
     //MARK: GET requests
     //call to api server endpoint to fetch requested data
-    func getCharitiesList(completion: @escaping ([Charity]?) -> Void) {
+    func getCharitiesList(completion: @escaping ([Charity]?, Error?) -> Void) {
         let endpoint = APIEndpoint.charities.rawValue
         let url = baseURL?.appendingPathComponent(endpoint)
         let dataTask = URLSession.shared.dataTask(with: url!) { (data, response, error) in
@@ -30,16 +30,17 @@ public struct CharitiesController {
                 if let data = data,
                     let charityList = try? JSONDecoder().decode(CharityList.self, from: data) {
                     print("Succesfully fetched charities data from remote server, passing data to caller")
-                    completion(charityList.charities)
+                    completion(charityList.charities, nil)
                 }
 
             } else {
-                //catch server responsed with invalid status code, trigger alert to user to take action
+                //FUTURE: catch server responsed with invalid status code, trigger alert to user to take action
             }
             
             if let error = error {
                 print("Failed to fetch charities data from remote server with error:\n\(error.localizedDescription)")
-                completion(nil)
+                completion(nil, error)
+                    //also pass error back to caller to take action / notify user
             }
             
         }
@@ -101,11 +102,11 @@ public struct CharitiesController {
                 }
                 
             } else {
-                //catch server responsed with invalid status code. Trigger alert to user to take action
+                //FUTURE: catch server responsed with invalid status code. Trigger alert to user to take action
             }
             
             if let error = error {
-                print("Failed to POST Donation data to remote server with error:\n\(error.localizedDescription))")
+                print("Failed to POST Donation data to remote server with error:\n\(error.localizedDescription)")
                 completion(nil, error)
                     //also pass error back to caller to take action / notify user
             }

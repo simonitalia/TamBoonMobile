@@ -281,10 +281,6 @@
                                     <action selector="cancelButtonTapped:" destination="lTX-yf-OHM" eventType="touchUpInside" id="qaN-eK-0Ti"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="FXi-I5-z2x">
-                                <rect key="frame" x="188.5" y="385.5" width="37" height="37"/>
-                                <color key="color" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.93854345034246578" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -303,11 +299,9 @@
                             <constraint firstItem="FbY-TM-xsU" firstAttribute="top" secondItem="EnQ-hX-uU5" secondAttribute="bottom" constant="30" id="QjQ-Gi-k8i"/>
                             <constraint firstItem="Jbp-Fj-Hbn" firstAttribute="leading" secondItem="HiI-nF-Lbj" secondAttribute="leading" id="RZ0-cc-lbA"/>
                             <constraint firstItem="HiI-nF-Lbj" firstAttribute="trailing" secondItem="Ud7-u0-Zuv" secondAttribute="trailing" id="Vhf-nk-M6H"/>
-                            <constraint firstItem="FXi-I5-z2x" firstAttribute="centerX" secondItem="HiI-nF-Lbj" secondAttribute="centerX" id="XAu-RJ-W3m"/>
                             <constraint firstItem="HiI-nF-Lbj" firstAttribute="trailing" secondItem="OCA-CC-KxH" secondAttribute="trailing" id="YCO-fF-NB5"/>
                             <constraint firstItem="dWN-2G-a8i" firstAttribute="leading" secondItem="HiI-nF-Lbj" secondAttribute="leading" id="h35-I9-E8R"/>
                             <constraint firstItem="HiI-nF-Lbj" firstAttribute="bottom" secondItem="dWN-2G-a8i" secondAttribute="bottom" id="hHC-Fa-i9F"/>
-                            <constraint firstItem="FXi-I5-z2x" firstAttribute="centerY" secondItem="HiI-nF-Lbj" secondAttribute="centerY" id="kjT-3G-gxN"/>
                             <constraint firstItem="HiI-nF-Lbj" firstAttribute="trailing" secondItem="dyC-K2-hkJ" secondAttribute="trailing" constant="20" id="s6N-GG-xDj"/>
                             <constraint firstItem="EnQ-hX-uU5" firstAttribute="leading" secondItem="HiI-nF-Lbj" secondAttribute="leading" constant="20" id="syn-W3-zkh"/>
                             <constraint firstItem="HiI-nF-Lbj" firstAttribute="trailing" secondItem="Jbp-Fj-Hbn" secondAttribute="trailing" id="xBY-IE-nT5"/>
@@ -317,7 +311,6 @@
                         <viewLayoutGuide key="safeArea" id="HiI-nF-Lbj"/>
                     </view>
                     <connections>
-                        <outlet property="activityIndicatorView" destination="FXi-I5-z2x" id="91P-EI-WT5"/>
                         <outlet property="donateButton" destination="dWN-2G-a8i" id="1iB-ia-sQz"/>
                         <outlet property="donationAmountLabel" destination="Ud7-u0-Zuv" id="W5o-JB-GzZ"/>
                         <segue destination="AHq-iQ-oXo" kind="unwind" identifier="DismissSubmitDonationVC" unwindAction="unwindToCharitiesTableVCWithSegue:" id="lrz-Ss-ZmF"/>
