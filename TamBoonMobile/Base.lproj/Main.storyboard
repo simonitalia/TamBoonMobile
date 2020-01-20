@@ -69,6 +69,9 @@
                             <pickerView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="n4g-c0-vIH">
                                 <rect key="frame" x="0.0" y="543" width="414" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" identifier="PickerView">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="AYi-Ya-qP8"/>
                                 </constraints>
