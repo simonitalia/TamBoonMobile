@@ -1,16 +1,17 @@
 # TamBoonMobile App
 
-*//App Objective*
+**//App Objective**
 - The aim of this app is to allow a user to make a donation to a charity of their choice, from a pre-defined list of curated charities.
 
 **//Development notes**
+
 //general
 - App could have been developed with a lot less code and inside main VC, however, since this is a practical test to evaluate knowledge and understanding, I utilized concepts and coding standards that although not necessary, better help demonstrate knowledge
 - Used completion handler over delegate protocol to demonstrate knowledge in completion handler methods
 - Used a combination of defining data models as structs (value type) and classes (reference type) + initializers to demonstrate knowledge of both types
 - In most cases handled errors (network or bad server responses) fro debugging purposes and (if applicable) trigger an Alert to user. In places where error is not handled, used FUTURE placeholder comments to identify where triggering UI Alerts to user could go if building app in full.
 
-**//Tests**
+//Tests
 - Wrote some tests and UI tests to demonstrate test knowledge, but obviously tests do not over entirety of app due to time constraints
 - Each test ideally should have a single Assert, however for the sake of time, included multiple where appropriate
 
