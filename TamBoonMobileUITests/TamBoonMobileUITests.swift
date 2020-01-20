@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import TamBoonMobile
 
 class TamBoonMobileUITests: XCTestCase {
 
@@ -26,10 +27,12 @@ class TamBoonMobileUITests: XCTestCase {
     func testExample() {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
+        app.launchArguments = ["enable-testing"]
         app.launch()
 
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+
     }
 
     func testLaunchPerformance() {
@@ -39,5 +42,43 @@ class TamBoonMobileUITests: XCTestCase {
                 XCUIApplication().launch()
             }
         }
+    }
+    
+    //MARK: Charities Table View Controller Scene tests
+    func testCharitiesTableVCTitleIsCorrectAftreDataLoad() {
+        let app = XCUIApplication()
+        
+        XCTAssert(app.staticTexts["Select Charity"].exists)
+    }
+    
+    
+    //MARK: Charity Detail View Controller Scene tests
+    func testCharityDetailVCTitleIsCorrect() {
+        let app = XCUIApplication()
+        
+        XCTAssert(app.staticTexts["Habitat for Humanity"].exists)
+    }
+    
+    func testCharityVCContinueButtonExists() {
+        let app = XCUIApplication()
+    
+        XCTAssertTrue(app.buttons["CONTINUE"].exists)
+    }
+    
+    func testContinueButtonDisplaysSubmitDonationVC() {
+        let app = XCUIApplication()
+        
+        app.buttons["CONTINUE"].tap()
+        
+        XCTAssert(app.buttons["DONATE"].waitForExistence(timeout: 2))
+    }
+    
+    //MARK: Charity Submit Donation View Controller Scene tests
+    func testSubmitDonationShowsSuccessAlert() {
+        let app = XCUIApplication()
+        
+        app.buttons["DONATE"].tap()
+        
+        XCTAssertTrue(app.alerts["Thank you! ❤️"].waitForExistence(timeout: 10))
     }
 }

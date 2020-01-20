@@ -20,6 +20,14 @@ class Charity: Codable {
         case name
         case logoURL = "logo_url"
     }
+    
+    //initializer
+    init(id: Int, name: String, logoURL: String) {
+        self.id = id
+        self.name = name
+        self.logoURL = logoURL
+    }
+    
 }
 
 struct CharityList: Codable {

@@ -13,6 +13,7 @@ class TamBoonMobileTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        continueAfterFailure = true
     }
 
     override func tearDown() {
@@ -54,6 +55,8 @@ class TamBoonMobileTests: XCTestCase {
         XCTAssertEqual(sut.amount, 1000)
     }
     
+    
+    //MARK: CharitiesController tests
     func testRemoteAPIServerBaseURLIsCorrect() {
         //given
         let sut = CharitiesController()
@@ -89,7 +92,7 @@ class TamBoonMobileTests: XCTestCase {
         XCTAssertEqual(rowCount, sut.charities.count)
     }
     
-    func testCharitiesTableViewControllerHasLargeTitles() {
+    func testCharitiesTableViewControllerLoadingTitleIsSmall() {
         //given
         let sut = CharitiesTableViewController()
         _ = UINavigationController(rootViewController: sut)
@@ -98,10 +101,10 @@ class TamBoonMobileTests: XCTestCase {
         sut.loadViewIfNeeded()
         
         //then
-        XCTAssertTrue(sut.navigationController?.navigationBar.prefersLargeTitles ?? true)
+        XCTAssertFalse(sut.navigationController?.navigationBar.prefersLargeTitles ?? false)
     }
     
-    func testCharitiesViewControllerHasInitialCorrectTitle() {
+    func testCharitiesViewControllerHasLoadingTitle() {
         //given
         let sut = CharitiesTableViewController()
         
@@ -111,6 +114,5 @@ class TamBoonMobileTests: XCTestCase {
         //then
         XCTAssertEqual(sut.title, "Loading...")
     }
-    
     
 }
