@@ -1,7 +1,35 @@
 # TamBoonMobile App
 
-**//App Objective**
+# App Objective**
 - The aim of this app is to allow a user to make a donation to a charity of their choice, from a pre-defined list of curated charities.
+
+# Demo
+![Demo](Demo_20012020.gif)
+
+# Technologies
+- UIKit
+
+- JSON Data
+
+- REST Web Services (GET & POST)
+
+- enum
+
+- UITableViewController
+
+- MVC
+
+- struct Data structure
+
+- class Data structure
+
+- UIAlertViewController
+
+- extension (Int, String)
+
+- thread management (background thread / main thread)
+
+- UIPickerView
 
 **//Development notes**
 
