@@ -5,7 +5,7 @@
 
 **//Development notes**
 
-//general
+//General
 - App could have been developed with a lot less code and inside main VC, however, since this is a practical test to evaluate knowledge and understanding, I utilized concepts and coding standards that although not necessary, better help demonstrate knowledge
 - Used completion handler over delegate protocol to demonstrate knowledge in completion handler methods
 - Used a combination of defining data models as structs (value type) and classes (reference type) + initializers to demonstrate knowledge of both types
